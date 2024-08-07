@@ -1,0 +1,160 @@
+
+// design tokens
+@import '../../tokens/variables';
+
+// Button Base Styles
+.button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 10px;
+  letter-spacing: 2px;
+  background-color: $brand-purple-400; // Use SCSS variables
+
+  min-width: 46px;
+  min-height: 24px;
+  text-transform: capitalize;
+
+  // Button Icon
+  &__icon {
+    height: 16px;
+    width: 16px;
+    margin: 0 10px;
+  }
+
+  // Button Text
+  &__text {
+    font-size: 12px;
+    margin: 0 10px;
+  }
+
+  // Button Wrapper
+  &__wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 300px;
+    max-height: 36px;
+  }
+
+  // Responsive Design
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+
+  // Button Sizes
+  &--small {
+    padding: 5px;
+    font-size: 12px;
+    height: 24px;
+  }
+
+  &--medium {
+    padding: 10px;
+    font-size: 13px;
+    height: 36px;
+  }
+
+  &--large {
+    padding: 14px;
+    font-size: 14px;
+    height: 48px;
+  }
+
+  // Primary Button
+  &--primary {
+    color: $neutrals-white;
+
+    &:focus {
+      outline: 2px solid $brand-purple-300;
+      border: 2px solid $neutrals-white;
+    }
+
+    &:hover {
+      background-color: $data-purples-bright-purple-hover;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      background-color: $neutrals-gray-200;
+      color: $neutrals-white;
+    }
+  }
+
+  // Secondary Button
+  &--secondary {
+    color: $data-purples-bright-purple-hover;
+    background-color: $neutrals-white;
+    border: 2px solid $brand-purple-400;
+
+    &:focus {
+      border: 2px solid $brand-purple-300;
+    }
+
+    &:hover {
+      background-color: $brand-purple-200;
+      border: 2px solid $data-purples-bright-purple-hover;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      background-color: $neutrals-white;
+      border: 2px solid $neutrals-gray-200;
+      color: $neutrals-gray-200;
+    }
+  }
+
+  // Tertiary Button
+  &--tertiary {
+    color: $brand-purple-400;
+    background-color: $neutrals-white;
+
+    &:focus {
+      border: 2px solid $brand-purple-300;
+    }
+
+    &:hover {
+      background-color: $brand-purple-200;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      background-color: $neutrals-white;
+      color: $neutrals-gray-200;
+    }
+  }
+
+  // Destructive Button
+  &--destructive {
+    color: $alerts-error;
+    border: 2px solid $alerts-error;
+    background-color: $neutrals-white;
+
+    &:focus {
+      outline: 2px solid $alerts-error;
+      outline-offset: -5px;
+      border: 2px solid $brand-purple-300;
+    }
+
+    &:hover {
+      background-color: $alerts-error-light-hover;
+      border: 2px solid $alerts-error;
+      outline: none;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      background-color: $neutrals-white;
+      border: 2px solid $neutrals-gray-200;
+      color: $neutrals-gray-200;
+      fill: $neutrals-gray-200;
+    }
+  }
+}
