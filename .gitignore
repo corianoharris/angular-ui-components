@@ -5,6 +5,7 @@
 /tmp
 /out-tsc
 /bazel-out
+/coverage
 
 # Node
 /node_modules
@@ -41,4 +42,6 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# Storybook build output
+storybook-static/
 *storybook.log

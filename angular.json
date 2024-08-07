@@ -129,7 +129,7 @@
               "-d",
               "."
             ],
-            "outputDir": "storybook-static"
+            "outputDir": "storybook-static/browser"
           }
         }
       }
