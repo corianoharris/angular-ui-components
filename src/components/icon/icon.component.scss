@@ -1,0 +1,22 @@
+// design tokens
+@import '../../tokens/variables';
+
+.icon-container {
+    display: inline-flex; // Use inline-flex for aligning items and centering
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+
+    // Ensure child elements (like .svg-icon) scale correctly
+    .svg-icon {
+        height: 100%;
+        width: 100%;
+    }
+
+    // If using Font Awesome icons
+    .fa-icon {
+        width: 100%;
+        height: 100%;
+        font-size: inherit; // Inherit font size from parent
+    }
+}
