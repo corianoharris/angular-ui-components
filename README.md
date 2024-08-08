@@ -1,3 +1,36 @@
+# Coriano Angular UI Library
+
+Welcome to the Coriano Angular UI Library! This library provides a collection of reusable and customizable UI components built with Angular. Explore the various components and their functionalities through our interactive Storybook.
+
+## Website
+
+You can view the UI library and its components live at: [Coriano Angular UI Library](https://coriano-angular-ui-libray.netlify.app/?path=/story/example-button--secondary)
+
+## Features
+
+- **Reusable Components**: A set of modular and reusable UI components.
+- **Customizable**: Easily customize components to fit your design requirements.
+- **Storybook Integration**: Explore and interact with the components in an interactive Storybook environment.
+- **Documentation**: Detailed documentation and examples for each component.
+
+## Components
+
+Here are some of the components available in the library:
+
+- **Button**: Various styles and states of buttons.
+- **Icons**: Customizable icon components for displaying font awesome icons and svg files.
+- **Tooltip**: Customizable tooltips with different positions.
+
+## Installation
+
+To use the Coriano Angular UI Library in your project, follow these steps:
+
+1. **Install the library**:
+
+   ```bash
+   npm install coriano-angular-ui-library
+
+
 # AngularStorybookApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.3.
