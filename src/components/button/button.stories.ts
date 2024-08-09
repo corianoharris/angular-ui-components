@@ -19,8 +19,17 @@ const meta: Meta<ButtonComponent> = {
         options: ['button', 'submit', 'reset'] 
       } 
     },
+    variant: { 
+      control: { 
+        type: 'select', 
+        options: ['primary' , 'secondary' , 'tertiary' , 'destructive' , 'loading'] 
+      } 
+    },
     isDisabled: { 
       control: 'boolean' 
+    },
+    isLoading: {
+      control: 'boolean',
     },
     showIconLeft: { 
       control: 'boolean' 
@@ -179,5 +188,12 @@ export const Destructive: Story = {
   args: {
     text: 'Destructive Button',
     variant: 'destructive',
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    text: 'Loading Button',
+    variant: 'loading',
   },
 };

@@ -220,7 +220,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-7ce39bed56116a0495f32ec0d68b6e6a36ef54a73af06124b594a8e340202faa43d9154c74356131affa12d7c6c523145cf6a0bb8f154f15ef4366447d4fb57f-1",
+            "id": "component-ButtonComponent-d8b8f34edbbe4a8b4a72c81ddd490851ef82877da7505c09d61ce5e009bd755ce2e83bbac50b4b37ec139cb020492ca1906c67eae8922806cedc1c67d33d21a9-1",
             "file": "src/components/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -262,6 +262,15 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 34,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "isLoading",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -382,7 +391,7 @@
                     "defaultValue": "new EventEmitter<void>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 36,
+                    "line": 37,
                     "type": "EventEmitter"
                 },
                 {
@@ -390,7 +399,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 35,
+                    "line": 36,
                     "type": "EventEmitter"
                 }
             ],
@@ -409,7 +418,7 @@
                     "optional": false,
                     "returnType": "IconDefinition",
                     "typeParameters": [],
-                    "line": 48,
+                    "line": 52,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -437,7 +446,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 43,
+                    "line": 44,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -475,11 +484,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';\nimport IconComponent from '../icon';\nimport { SafeResourceUrl } from '@angular/platform-browser';\nimport { ButtonVariant, ButtonSize, ButtonProps } from './button.types';\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\nimport { IconDefinition } from '@fortawesome/fontawesome-svg-core';\nimport { faIconsList } from '../icon/icons';\nimport { faQuestion } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'app-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n  standalone: true,\n  imports: [CommonModule, IconComponent, FontAwesomeModule],\n})\nexport class ButtonComponent implements ButtonProps {\n  @Input() faIconLeft: IconDefinition | string = faQuestion;\n  @Input() faIconRight: IconDefinition | string = faQuestion; \n  @Input() variant: ButtonVariant = 'primary'; \n  @Input() text: string = '';\n  @Input() type: string = '';\n  @Input() showFaIconLeft?: boolean;\n  @Input() showFaIconRight?: boolean;\n  @Input() showSvgIconLeft?: boolean;\n  @Input() showSvgIconRight?: boolean;\n  @Input() isText?: boolean;\n  @Input() showIconLeft?: boolean;\n  @Input() showIconRight?: boolean;\n  @Input() svgIconLeft?: SafeResourceUrl | undefined = \"icons/rocket.svg\";\n  @Input() svgIconRight?: SafeResourceUrl  | undefined = \"https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/osa.svg\";\n  @Input() size: ButtonSize = 'medium';\n  @Input() isDisabled: boolean = false;\n  @Output() onClick = new EventEmitter<Event>();\n  @Output() clicked = new EventEmitter<void>();\n \n  public get classes(): string {\n    const mode = `button--${this.variant}`;\n    return `button button--${this.size} ${mode}`;\n  }\n\n  handleClick(event: Event) {\n    this.onClick.emit(event);\n    this.clicked.emit();\n  }\n\n  getIcon(icon: IconDefinition | string): IconDefinition {\n    if (typeof icon === 'string') {\n      const foundIcon = faIconsList.find(i => i.label === icon);\n      return foundIcon ? foundIcon.value : faQuestion; // Return a default icon if not found\n    }\n    return icon || faQuestion; // Return the icon if it's already an IconDefinition, or a default if it's null/undefined\n  }\n}",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';\nimport IconComponent from '../icon';\nimport { SafeResourceUrl } from '@angular/platform-browser';\nimport { ButtonVariant, ButtonSize, ButtonProps } from './button.types';\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\nimport { IconDefinition } from '@fortawesome/fontawesome-svg-core';\nimport { faIconsList } from '../icon/icons';\nimport { faQuestion } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'app-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n  standalone: true,\n  imports: [CommonModule, IconComponent, FontAwesomeModule],\n})\nexport class ButtonComponent implements ButtonProps {\n  @Input() faIconLeft: IconDefinition | string = faQuestion;\n  @Input() faIconRight: IconDefinition | string = faQuestion; \n  @Input() variant: ButtonVariant = 'primary'; \n  @Input() text: string = '';\n  @Input() type: string = '';\n  @Input() showFaIconLeft?: boolean;\n  @Input() showFaIconRight?: boolean;\n  @Input() showSvgIconLeft?: boolean;\n  @Input() showSvgIconRight?: boolean;\n  @Input() isText?: boolean;\n  @Input() showIconLeft?: boolean;\n  @Input() showIconRight?: boolean;\n  @Input() svgIconLeft?: SafeResourceUrl | undefined = \"icons/rocket.svg\";\n  @Input() svgIconRight?: SafeResourceUrl  | undefined = \"https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/osa.svg\";\n  @Input() size: ButtonSize = 'medium';\n  @Input() isDisabled: boolean = false;\n  @Input() isLoading: boolean = false;\n  @Output() onClick = new EventEmitter<Event>();\n  @Output() clicked = new EventEmitter<void>();\n \n  public get classes(): string {\n    const mode = `button--${this.variant}`;\n    return `button button--${this.size} ${mode}`;\n  }\n\n  handleClick(event: Event) {\n    if (!this.isLoading) { // Prevent click event if loading\n      this.onClick.emit(event);\n      this.clicked.emit();\n    }\n  }\n\n\n  getIcon(icon: IconDefinition | string): IconDefinition {\n    if (typeof icon === 'string') {\n      const foundIcon = faIconsList.find(i => i.label === icon);\n      return foundIcon ? foundIcon.value : faQuestion; // Return a default icon if not found\n    }\n    return icon || faQuestion; // Return the icon if it's already an IconDefinition, or a default if it's null/undefined\n  }\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\n// design tokens\n@import '../../tokens/variables';\n\n// Button Base Styles\n.button {\n  font-family: \"Montserrat\", sans-serif;\n  font-weight: 700;\n  font-size: 13px;\n  border: 0;\n  border-radius: 8px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  line-height: 1;\n  padding: 10px;\n  letter-spacing: 2px;\n  background-color: $brand-purple-400; // Use SCSS variables\n\n  min-width: 46px;\n  min-height: 24px;\n  text-transform: capitalize;\n\n  // Button Icon\n  &__icon {\n    height: 16px;\n    width: 16px;\n    margin: 0 10px;\n  }\n\n  // Button Text\n  &__text {\n    font-size: 12px;\n    margin: 0 10px;\n  }\n\n  // Button Wrapper\n  &__wrapper {\n    display: flex;\n    justify-content: space-evenly;\n    align-items: center;\n    max-width: 300px;\n    max-height: 36px;\n  }\n\n  // Responsive Design\n  @media (max-width: 600px) {\n    width: 100%;\n  }\n\n  // Button Sizes\n  &--small {\n    padding: 5px;\n    font-size: 12px;\n    height: 24px;\n  }\n\n  &--medium {\n    padding: 10px;\n    font-size: 13px;\n    height: 36px;\n  }\n\n  &--large {\n    padding: 14px;\n    font-size: 14px;\n    height: 48px;\n  }\n\n  // Primary Button\n  &--primary {\n    color: $neutrals-white;\n\n    &:focus {\n      outline: 2px solid $brand-purple-300;\n      border: 2px solid $neutrals-white;\n    }\n\n    &:hover {\n      background-color: $data-purples-bright-purple-hover;\n    }\n\n    &:disabled {\n      cursor: not-allowed;\n      background-color: $neutrals-gray-200;\n      color: $neutrals-white;\n    }\n  }\n\n  // Secondary Button\n  &--secondary {\n    color: $data-purples-bright-purple-hover;\n    background-color: $neutrals-white;\n    border: 2px solid $brand-purple-400;\n\n    &:focus {\n      border: 2px solid $brand-purple-300;\n    }\n\n    &:hover {\n      background-color: $brand-purple-200;\n      border: 2px solid $data-purples-bright-purple-hover;\n    }\n\n    &:disabled {\n      cursor: not-allowed;\n      background-color: $neutrals-white;\n      border: 2px solid $neutrals-gray-200;\n      color: $neutrals-gray-200;\n    }\n  }\n\n  // Tertiary Button\n  &--tertiary {\n    color: $brand-purple-400;\n    background-color: $neutrals-white;\n\n    &:focus {\n      border: 2px solid $brand-purple-300;\n    }\n\n    &:hover {\n      background-color: $brand-purple-200;\n    }\n\n    &:disabled {\n      cursor: not-allowed;\n      background-color: $neutrals-white;\n      color: $neutrals-gray-200;\n    }\n  }\n\n  // Destructive Button\n  &--destructive {\n    color: $alerts-error;\n    border: 2px solid $alerts-error;\n    background-color: $neutrals-white;\n\n    &:focus {\n      outline: 2px solid $alerts-error;\n      outline-offset: -5px;\n      border: 2px solid $brand-purple-300;\n    }\n\n    &:hover {\n      background-color: $alerts-error-light-hover;\n      border: 2px solid $alerts-error;\n      outline: none;\n    }\n\n    &:disabled {\n      cursor: not-allowed;\n      background-color: $neutrals-white;\n      border: 2px solid $neutrals-gray-200;\n      color: $neutrals-gray-200;\n      fill: $neutrals-gray-200;\n    }\n  }\n}\n",
+                    "data": "\n// design tokens\n@import '../../tokens/variables';\n\n// Button Base Styles\n.button {\n  font-family: \"Montserrat\", sans-serif;\n  font-weight: 700;\n  font-size: 13px;\n  border: 0;\n  border-radius: 8px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  line-height: 1;\n  padding: 10px;\n  letter-spacing: 2px;\n  background-color: $brand-purple-400; // Use SCSS variables\n\n  min-width: 46px;\n  min-height: 24px;\n  text-transform: capitalize;\n\n  // Button Icon\n  &__icon {\n    height: 16px;\n    width: 16px;\n    margin: 0 10px;\n  }\n\n  // Button Text\n  &__text {\n    font-size: 12px;\n    margin: 0 10px;\n  }\n\n  // Button Wrapper\n  &__wrapper {\n    display: flex;\n    justify-content: space-evenly;\n    align-items: center;\n    max-width: 300px;\n    max-height: 36px;\n  }\n\n  // Responsive Design\n  @media (max-width: 600px) {\n    width: 100%;\n  }\n\n  // Button Sizes\n  &--small {\n    padding: 5px;\n    font-size: 12px;\n    height: 24px;\n  }\n\n  &--medium {\n    padding: 10px;\n    font-size: 13px;\n    height: 36px;\n  }\n\n  &--large {\n    padding: 14px;\n    font-size: 14px;\n    height: 48px;\n  }\n\n  // Primary Button\n  &--primary {\n    color: $neutrals-white;\n\n    &:focus {\n      outline: 2px solid $brand-purple-300;\n      border: 2px solid $neutrals-white;\n    }\n\n    &:hover {\n      background-color: $data-purples-bright-purple-hover;\n    }\n\n    &:disabled {\n      cursor: not-allowed;\n      background-color: $neutrals-gray-200;\n      color: $neutrals-white;\n    }\n  }\n\n  // Secondary Button\n  &--secondary {\n    color: $data-purples-bright-purple-hover;\n    background-color: $neutrals-white;\n    border: 2px solid $brand-purple-400;\n\n    &:focus {\n      border: 2px solid $brand-purple-300;\n    }\n\n    &:hover {\n      background-color: $brand-purple-200;\n      border: 2px solid $data-purples-bright-purple-hover;\n    }\n\n    &:disabled {\n      cursor: not-allowed;\n      background-color: $neutrals-white;\n      border: 2px solid $neutrals-gray-200;\n      color: $neutrals-gray-200;\n    }\n  }\n\n  // Tertiary Button\n  &--tertiary {\n    color: $brand-purple-400;\n    background-color: $neutrals-white;\n\n    &:focus {\n      border: 2px solid $brand-purple-300;\n    }\n\n    &:hover {\n      background-color: $brand-purple-200;\n    }\n\n    &:disabled {\n      cursor: not-allowed;\n      background-color: $neutrals-white;\n      color: $neutrals-gray-200;\n    }\n  }\n\n  // Destructive Button\n  &--destructive {\n    color: $alerts-error;\n    border: 2px solid $alerts-error;\n    background-color: $neutrals-white;\n\n    &:focus {\n      outline: 2px solid $alerts-error;\n      outline-offset: -5px;\n      border: 2px solid $brand-purple-300;\n    }\n\n    &:hover {\n      background-color: $alerts-error-light-hover;\n      border: 2px solid $alerts-error;\n      outline: none;\n    }\n\n    &:disabled {\n      cursor: not-allowed;\n      background-color: $neutrals-white;\n      border: 2px solid $neutrals-gray-200;\n      color: $neutrals-gray-200;\n      fill: $neutrals-gray-200;\n    }\n  }\n\n  &--loading {\n    position: absolute;\n    font-size: 1.5em;\n  }\n\n  &--loading::before {\n    content: '';\n    display: inline-block;\n    width: .5em;\n    height: .5em;\n    border: 0.2em solid $neutrals-gray-200;\n    border-radius: 50%;\n    border-top-color: currentColor;\n    animation: spin 1s linear infinite;\n\n    @keyframes spin {\n      0% { transform: rotate(0deg); }\n      100% { transform: rotate(360deg); }\n    }\n  }\n}\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -495,14 +504,14 @@
                         "name": "classes",
                         "type": "string",
                         "returnType": "string",
-                        "line": 38
+                        "line": 39
                     }
                 }
             },
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "ButtonComponent-1",
-            "templateData": "<button class=\"button\" [type]=\"type\" [ngClass]=\"classes\" (click)=\"handleClick($event)\" [disabled]=\"isDisabled\"\n  [attr.aria-label]=\"text\">\n  <div class=\"button__wrapper\">\n    <div class=\"button__icon-wrapper\" *ngIf=\"showIconLeft\">\n      <fa-icon *ngIf=\"showFaIconLeft && !showSvgIconLeft\" class=\"button__icon\" [icon]=\"faIconLeft\">\n      </fa-icon>\n      <img *ngIf=\"showSvgIconLeft && !showFaIconLeft\" class=\"button__icon\" [src]=\"svgIconLeft\" alt=\"\">\n    </div>\n    <span class=\"button__text\" *ngIf=\"text\">{{ text }}</span>\n    <div class=\"button__icon-wrapper\" *ngIf=\"showIconRight\">\n      <fa-icon *ngIf=\"showFaIconRight && !showSvgIconRight\" class=\"button__icon\" [icon]=\"faIconRight\">\n      </fa-icon>\n      <img *ngIf=\"showSvgIconRight && !showFaIconRight\" class=\"button__icon\" [src]=\"svgIconRight\" alt=\"\">\n    </div>\n  </div>\n</button>"
+            "templateData": "<button class=\"button\" [type]=\"type\" [ngClass]=\"classes\" (click)=\"handleClick($event)\" [disabled]=\"isDisabled\"\n  [attr.aria-label]=\"text\">\n  <div class=\"button__wrapper\">\n    <div class=\"button__icon-wrapper\" *ngIf=\"isLoading\">\n      <fa-icon [icon]=\"['fas', 'spinner']\" spin class=\"button_icon button__spinner\"></fa-icon>\n    </div>\n    <div class=\"button__icon-wrapper\" *ngIf=\"showIconLeft\">\n      <fa-icon *ngIf=\"showFaIconLeft && !showSvgIconLeft\" class=\"button__icon\" [icon]=\"faIconLeft\">\n      </fa-icon>\n      <img *ngIf=\"showSvgIconLeft && !showFaIconLeft\" class=\"button__icon\" [src]=\"svgIconLeft\" alt=\"\">\n    </div>\n    <span class=\"button__text\" *ngIf=\"text\">{{ text }}</span>\n    <div class=\"button__icon-wrapper\" *ngIf=\"showIconRight\">\n      <fa-icon *ngIf=\"showFaIconRight && !showSvgIconRight\" class=\"button__icon\" [icon]=\"faIconRight\">\n      </fa-icon>\n      <img *ngIf=\"showSvgIconRight && !showFaIconRight\" class=\"button__icon\" [src]=\"svgIconRight\" alt=\"\">\n    </div>\n  </div>\n</button>"
         },
         {
             "name": "HeaderComponent",
@@ -1340,7 +1349,7 @@
                 "name": "ButtonVariant",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "\"primary\" | \"secondary\" | \"tertiary\" | \"destructive\"",
+                "rawtype": "\"primary\" | \"secondary\" | \"tertiary\" | \"destructive\" | \"loading\"",
                 "file": "src/components/button/button.types.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1485,7 +1494,7 @@
                     "name": "ButtonVariant",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "\"primary\" | \"secondary\" | \"tertiary\" | \"destructive\"",
+                    "rawtype": "\"primary\" | \"secondary\" | \"tertiary\" | \"destructive\" | \"loading\"",
                     "file": "src/components/button/button.types.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -1558,7 +1567,7 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/21",
+                "coverageCount": "0/22",
                 "status": "low"
             },
             {

@@ -1,6 +1,9 @@
 <button class="button" [type]="type" [ngClass]="classes" (click)="handleClick($event)" [disabled]="isDisabled"
   [attr.aria-label]="text">
   <div class="button__wrapper">
+    <div class="button__icon-wrapper" *ngIf="isLoading">
+      <fa-icon [icon]="['fas', 'spinner']" spin class="button_icon button__spinner"></fa-icon>
+    </div>
     <div class="button__icon-wrapper" *ngIf="showIconLeft">
       <fa-icon *ngIf="showFaIconLeft && !showSvgIconLeft" class="button__icon" [icon]="faIconLeft">
       </fa-icon>

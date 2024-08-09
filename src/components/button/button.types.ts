@@ -1,7 +1,7 @@
 import { SafeResourceUrl } from '@angular/platform-browser';
 import { EventEmitter } from '@angular/core';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'destructive';
+export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'destructive' | 'loading';
 export type ButtonSize = 'small' | 'medium' | 'large';
 
 export type ButtonProps = {

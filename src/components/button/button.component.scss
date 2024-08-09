@@ -157,4 +157,26 @@
       fill: $neutrals-gray-200;
     }
   }
+
+  &--loading {
+    position: absolute;
+    font-size: 1.5em;
+    background-color: $ui-focus;
+  }
+
+  &--loading::before {
+    content: '';
+    display: inline-block;
+    width: .5em;
+    height: .5em;
+    border: 0.2em solid $neutrals-gray-200;
+    border-radius: 50%;
+    border-top-color: currentColor;
+    animation: spin 1s linear infinite;
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  }
 }

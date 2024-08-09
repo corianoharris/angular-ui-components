@@ -32,6 +32,7 @@ export class ButtonComponent implements ButtonProps {
   @Input() svgIconRight?: SafeResourceUrl  | undefined = "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/osa.svg";
   @Input() size: ButtonSize = 'medium';
   @Input() isDisabled: boolean = false;
+  @Input() isLoading: boolean = false;
   @Output() onClick = new EventEmitter<Event>();
   @Output() clicked = new EventEmitter<void>();
  
@@ -41,9 +42,12 @@ export class ButtonComponent implements ButtonProps {
   }
 
   handleClick(event: Event) {
-    this.onClick.emit(event);
-    this.clicked.emit();
+    if (!this.isLoading) { // Prevent click event if loading
+      this.onClick.emit(event);
+      this.clicked.emit();
+    }
   }
+
 
   getIcon(icon: IconDefinition | string): IconDefinition {
     if (typeof icon === 'string') {
