@@ -50,7 +50,7 @@ const meta: Meta<ButtonComponent> = {
       control: 'boolean' 
     },
     faIconLeft: { 
-      if: { arg: 'showFaIconLeft && !showSvgIconLeft' },
+    // if: { arg: 'showIconLeft && showFaIconLeft && !showSvgIconLeft' },
       options: faIconsList.map(option => option.label),
       control: { type: 'select' },
       mapping: faIconsList.reduce<{ [key: string]: IconDefinition }>((acc, cur) => {
