@@ -1,8 +1,5 @@
-
-// design tokens
 @import '../../tokens/variables';
 
-// Button Base Styles
 .button {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -16,26 +13,11 @@
   line-height: 1;
   padding: 10px;
   letter-spacing: 2px;
-  background-color: $brand-purple-400; // Use SCSS variables
-
+  background-color: $brand-purple-400;
   min-width: 46px;
   min-height: 24px;
   text-transform: capitalize;
 
-  // Button Icon
-  &__icon {
-    height: 16px;
-    width: 16px;
-    margin: 0 10px;
-  }
-
-  // Button Text
-  &__text {
-    font-size: 12px;
-    margin: 0 10px;
-  }
-
-  // Button Wrapper
   &__wrapper {
     display: flex;
     justify-content: space-evenly;
@@ -44,139 +26,100 @@
     max-height: 36px;
   }
 
-  // Responsive Design
+  &__icon {
+    width: 16px;
+    height: 16px;
+    margin: 0 10px;
+  }
+
+  &__text {
+    font-size: 12px;
+    margin: 0 10px;
+  }
+
   @media (max-width: 600px) {
     width: 100%;
   }
 
-  // Button Sizes
   &--small {
     padding: 5px;
     font-size: 12px;
-    height: 24px;
+    min-height: 24px;
   }
 
   &--medium {
     padding: 10px;
     font-size: 13px;
-    height: 36px;
+    min-height: 36px;
   }
 
   &--large {
     padding: 14px;
     font-size: 14px;
-    height: 48px;
+    min-height: 48px;
   }
 
-  // Primary Button
   &--primary {
     color: $neutrals-white;
-
-    &:focus {
-      outline: 2px solid $brand-purple-300;
-      border: 2px solid $neutrals-white;
-    }
-
-    &:hover {
-      background-color: $data-purples-bright-purple-hover;
-    }
-
-    &:disabled {
-      cursor: not-allowed;
-      background-color: $neutrals-gray-200;
-      color: $neutrals-white;
+    background-color: $brand-purple-400;
+    &:hover { background-color: $data-purples-bright-purple-hover; }
+    &:focus { outline: 2px solid $brand-purple-300; border: 2px solid $neutrals-white; }
+    &:disabled { 
+      cursor: not-allowed; 
+      background-color: $neutrals-gray-200; 
+      color: $neutrals-white; 
     }
   }
 
-  // Secondary Button
   &--secondary {
     color: $data-purples-bright-purple-hover;
     background-color: $neutrals-white;
     border: 2px solid $brand-purple-400;
-
-    &:focus {
-      border: 2px solid $brand-purple-300;
+    &:hover { 
+      background-color: $brand-purple-200; 
+      border-color: $data-purples-bright-purple-hover; 
     }
-
-    &:hover {
-      background-color: $brand-purple-200;
-      border: 2px solid $data-purples-bright-purple-hover;
-    }
-
-    &:disabled {
-      cursor: not-allowed;
-      background-color: $neutrals-white;
-      border: 2px solid $neutrals-gray-200;
-      color: $neutrals-gray-200;
+    &:focus { border-color: $brand-purple-300; }
+    &:disabled { 
+      cursor: not-allowed; 
+      background-color: $neutrals-white; 
+      border-color: $neutrals-gray-200; 
+      color: $neutrals-gray-200; 
     }
   }
 
-  // Tertiary Button
   &--tertiary {
     color: $brand-purple-400;
     background-color: $neutrals-white;
-
-    &:focus {
-      border: 2px solid $brand-purple-300;
-    }
-
-    &:hover {
-      background-color: $brand-purple-200;
-    }
-
-    &:disabled {
-      cursor: not-allowed;
-      background-color: $neutrals-white;
-      color: $neutrals-gray-200;
+    &:hover { background-color: $brand-purple-200; }
+    &:focus { border: 2px solid $brand-purple-300; }
+    &:disabled { 
+      cursor: not-allowed; 
+      background-color: $neutrals-white; 
+      color: $neutrals-gray-200; 
     }
   }
 
-  // Destructive Button
   &--destructive {
     color: $alerts-error;
-    border: 2px solid $alerts-error;
     background-color: $neutrals-white;
-
-    &:focus {
-      outline: 2px solid $alerts-error;
-      outline-offset: -5px;
-      border: 2px solid $brand-purple-300;
+    border: 2px solid $alerts-error;
+    &:hover { 
+      background-color: $alerts-error-light-hover; 
+      border-color: $alerts-error; 
+      outline: none; 
     }
-
-    &:hover {
-      background-color: $alerts-error-light-hover;
-      border: 2px solid $alerts-error;
-      outline: none;
+    &:focus { 
+      outline: 2px solid $alerts-error; 
+      outline-offset: -5px; 
+      border-color: $brand-purple-300; 
     }
-
-    &:disabled {
-      cursor: not-allowed;
-      background-color: $neutrals-white;
-      border: 2px solid $neutrals-gray-200;
-      color: $neutrals-gray-200;
-      fill: $neutrals-gray-200;
-    }
-  }
-
-  &--loading {
-    position: absolute;
-    font-size: 1.5em;
-    background-color: $ui-focus;
-  }
-
-  &--loading::before {
-    content: '';
-    display: inline-block;
-    width: .5em;
-    height: .5em;
-    border: 0.2em solid $neutrals-gray-200;
-    border-radius: 50%;
-    border-top-color: currentColor;
-    animation: spin 1s linear infinite;
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    &:disabled { 
+      cursor: not-allowed; 
+      background-color: $neutrals-white; 
+      border-color: $neutrals-gray-200; 
+      color: $neutrals-gray-200; 
+      fill: $neutrals-gray-200; 
     }
   }
 }

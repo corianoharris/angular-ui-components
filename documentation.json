@@ -2,6 +2,201 @@
     "pipes": [],
     "interfaces": [
         {
+            "name": "ButtonProps",
+            "id": "interface-ButtonProps-75a900c8a4e3e0452ec579e07260a5a9afe3e3c3bcc960b9fe03141ec6791e88c48b244ca5faa8eb9df8fb528f4e4e6b7af8b37f461487158738c5bf4c8b3f12",
+            "file": "src/components/button/button.types.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { SafeResourceUrl } from '@angular/platform-browser';\nimport { EventEmitter } from '@angular/core';\nimport { IconDefinition } from '@fortawesome/fontawesome-svg-core';\n\nexport type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'destructive';\nexport type ButtonSize = 'small' | 'medium' | 'large';\nexport type ButtonType = 'button' | 'submit' | 'reset';\n\nexport interface ButtonProps {\n  faIconLeft?: IconDefinition;\n  faIconRight?: IconDefinition;\n  variant: ButtonVariant;\n  type: ButtonType;\n  text: string;\n  showFaIconLeft?: boolean;\n  showFaIconRight?: boolean;\n  showSvgIconLeft?: boolean;\n  showSvgIconRight?: boolean;\n  showIconLeft?: boolean;\n  showIconRight?: boolean;\n  svgIconLeft?: string;\n  svgIconRight?: string;\n  size: ButtonSize;\n  isDisabled: boolean;\n  isLoading: boolean;\n  onClick: EventEmitter<Event>;\n  clicked: EventEmitter<void>;\n}",
+            "properties": [
+                {
+                    "name": "clicked",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "EventEmitter<void>",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
+                },
+                {
+                    "name": "faIconLeft",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "IconDefinition",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "faIconRight",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "IconDefinition",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "isDisabled",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
+                },
+                {
+                    "name": "isLoading",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 25
+                },
+                {
+                    "name": "onClick",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "EventEmitter<Event>",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 26
+                },
+                {
+                    "name": "showFaIconLeft",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "showFaIconRight",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 16
+                },
+                {
+                    "name": "showIconLeft",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "showIconRight",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "showSvgIconLeft",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "showSvgIconRight",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "size",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ButtonSize",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                },
+                {
+                    "name": "svgIconLeft",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "svgIconRight",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 22
+                },
+                {
+                    "name": "text",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "type",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ButtonType",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "name": "variant",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ButtonVariant",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
             "name": "User",
             "id": "interface-User-d4821beac0e4a852e513391b7470981c4353fdd95a18628bb68136c8695b489ee15b926e2e5031bc26cf30e1508e0a362c3ee13a06734702b4d15af140e485d5",
             "file": "src/stories/user.ts",
@@ -15,6 +210,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 2
@@ -58,6 +254,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 12
@@ -123,17 +320,18 @@
                         {
                             "pos": 798,
                             "end": 811,
+                            "kind": 327,
+                            "id": 0,
                             "flags": 16842752,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
-                            "kind": 334,
                             "tagName": {
                                 "pos": 799,
                                 "end": 807,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
                                 "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
                                 "escapedText": "required"
                             },
                             "comment": ""
@@ -220,7 +418,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-d8b8f34edbbe4a8b4a72c81ddd490851ef82877da7505c09d61ce5e009bd755ce2e83bbac50b4b37ec139cb020492ca1906c67eae8922806cedc1c67d33d21a9-1",
+            "id": "component-ButtonComponent-47ee5e889c205989ddb34f3138c0368cb866cbad586e4b70b4b158eb5ff2e0c79c37879e4edb62d4dfd601cefa50d3402340a15bc81e0be72d5f7d5d4aeae3e4-1",
             "file": "src/components/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -243,8 +441,8 @@
                     "defaultValue": "faQuestion",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
-                    "type": "IconDefinition | string",
+                    "line": 17,
+                    "type": "IconDefinition",
                     "decorators": []
                 },
                 {
@@ -252,8 +450,8 @@
                     "defaultValue": "faQuestion",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
-                    "type": "IconDefinition | string",
+                    "line": 18,
+                    "type": "IconDefinition",
                     "decorators": []
                 },
                 {
@@ -261,7 +459,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 34,
+                    "line": 31,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -270,52 +468,31 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 35,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "isText",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 28,
+                    "line": 32,
                     "type": "boolean",
                     "decorators": []
                 },
                 {
                     "name": "showFaIconLeft",
+                    "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 24,
+                    "line": 22,
                     "type": "boolean",
                     "decorators": []
                 },
                 {
                     "name": "showFaIconRight",
+                    "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 25,
+                    "line": 23,
                     "type": "boolean",
                     "decorators": []
                 },
                 {
                     "name": "showIconLeft",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 29,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "showIconRight",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 30,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "showSvgIconLeft",
+                    "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 26,
@@ -323,10 +500,29 @@
                     "decorators": []
                 },
                 {
-                    "name": "showSvgIconRight",
+                    "name": "showIconRight",
+                    "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 27,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showSvgIconLeft",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showSvgIconRight",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -335,26 +531,24 @@
                     "defaultValue": "'medium'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 33,
+                    "line": 30,
                     "type": "ButtonSize",
                     "decorators": []
                 },
                 {
                     "name": "svgIconLeft",
-                    "defaultValue": "\"icons/rocket.svg\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 31,
-                    "type": "SafeResourceUrl | undefined",
+                    "line": 28,
+                    "type": "string",
                     "decorators": []
                 },
                 {
                     "name": "svgIconRight",
-                    "defaultValue": "\"https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/osa.svg\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 32,
-                    "type": "SafeResourceUrl | undefined",
+                    "line": 29,
+                    "type": "string",
                     "decorators": []
                 },
                 {
@@ -362,17 +556,17 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 20,
                     "type": "string",
                     "decorators": []
                 },
                 {
                     "name": "type",
-                    "defaultValue": "''",
+                    "defaultValue": "'button'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
-                    "type": "string",
+                    "line": 21,
+                    "type": "\"button\" | \"submit\" | \"reset\"",
                     "decorators": []
                 },
                 {
@@ -380,7 +574,7 @@
                     "defaultValue": "'primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 19,
                     "type": "ButtonVariant",
                     "decorators": []
                 }
@@ -391,7 +585,7 @@
                     "defaultValue": "new EventEmitter<void>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 37,
+                    "line": 34,
                     "type": "EventEmitter"
                 },
                 {
@@ -399,18 +593,33 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 36,
+                    "line": 33,
                     "type": "EventEmitter"
                 }
             ],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "faSpinner",
+                    "defaultValue": "faSpinner",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "IconDefinition",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 37,
+                    "modifierKind": [
+                        148
+                    ]
+                }
+            ],
             "methodsClass": [
                 {
                     "name": "getIcon",
                     "args": [
                         {
                             "name": "icon",
-                            "type": "IconDefinition | string",
+                            "type": "IconDefinition | undefined",
                             "deprecated": false,
                             "deprecationMessage": ""
                         }
@@ -424,7 +633,7 @@
                     "jsdoctags": [
                         {
                             "name": "icon",
-                            "type": "IconDefinition | string",
+                            "type": "IconDefinition | undefined",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
@@ -446,7 +655,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 44,
+                    "line": 45,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -455,6 +664,36 @@
                             "type": "Event",
                             "deprecated": false,
                             "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "sanitizeSvg",
+                    "args": [
+                        {
+                            "name": "url",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "optional": true
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "SafeResourceUrl | string",
+                    "typeParameters": [],
+                    "line": 56,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "url",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "optional": true,
                             "tagName": {
                                 "text": "param"
                             }
@@ -473,10 +712,6 @@
                     "type": "module"
                 },
                 {
-                    "name": "IconComponent",
-                    "type": "component"
-                },
-                {
                     "name": "FontAwesomeModule",
                     "type": "module"
                 }
@@ -484,19 +719,42 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';\nimport IconComponent from '../icon';\nimport { SafeResourceUrl } from '@angular/platform-browser';\nimport { ButtonVariant, ButtonSize, ButtonProps } from './button.types';\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\nimport { IconDefinition } from '@fortawesome/fontawesome-svg-core';\nimport { faIconsList } from '../icon/icons';\nimport { faQuestion } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'app-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n  standalone: true,\n  imports: [CommonModule, IconComponent, FontAwesomeModule],\n})\nexport class ButtonComponent implements ButtonProps {\n  @Input() faIconLeft: IconDefinition | string = faQuestion;\n  @Input() faIconRight: IconDefinition | string = faQuestion; \n  @Input() variant: ButtonVariant = 'primary'; \n  @Input() text: string = '';\n  @Input() type: string = '';\n  @Input() showFaIconLeft?: boolean;\n  @Input() showFaIconRight?: boolean;\n  @Input() showSvgIconLeft?: boolean;\n  @Input() showSvgIconRight?: boolean;\n  @Input() isText?: boolean;\n  @Input() showIconLeft?: boolean;\n  @Input() showIconRight?: boolean;\n  @Input() svgIconLeft?: SafeResourceUrl | undefined = \"icons/rocket.svg\";\n  @Input() svgIconRight?: SafeResourceUrl  | undefined = \"https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/osa.svg\";\n  @Input() size: ButtonSize = 'medium';\n  @Input() isDisabled: boolean = false;\n  @Input() isLoading: boolean = false;\n  @Output() onClick = new EventEmitter<Event>();\n  @Output() clicked = new EventEmitter<void>();\n \n  public get classes(): string {\n    const mode = `button--${this.variant}`;\n    return `button button--${this.size} ${mode}`;\n  }\n\n  handleClick(event: Event) {\n    if (!this.isLoading) { // Prevent click event if loading\n      this.onClick.emit(event);\n      this.clicked.emit();\n    }\n  }\n\n\n  getIcon(icon: IconDefinition | string): IconDefinition {\n    if (typeof icon === 'string') {\n      const foundIcon = faIconsList.find(i => i.label === icon);\n      return foundIcon ? foundIcon.value : faQuestion; // Return a default icon if not found\n    }\n    return icon || faQuestion; // Return the icon if it's already an IconDefinition, or a default if it's null/undefined\n  }\n}",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\nimport { IconDefinition, faQuestion, faSpinner } from '@fortawesome/free-solid-svg-icons';\nimport { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';\nimport { ButtonVariant, ButtonSize } from './button.types';\n\n@Component({\n  selector: 'app-button',\n  standalone: true,\n  imports: [CommonModule, FontAwesomeModule],\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n  schemas: [CUSTOM_ELEMENTS_SCHEMA],\n})\nexport class ButtonComponent {\n  @Input() faIconLeft: IconDefinition = faQuestion;\n  @Input() faIconRight: IconDefinition = faQuestion;\n  @Input() variant: ButtonVariant = 'primary';\n  @Input() text = '';\n  @Input() type: 'button' | 'submit' | 'reset' = 'button';\n  @Input() showFaIconLeft = false;\n  @Input() showFaIconRight = false;\n  @Input() showSvgIconLeft = false;\n  @Input() showSvgIconRight = false;\n  @Input() showIconLeft = false;\n  @Input() showIconRight = false;\n  @Input() svgIconLeft?: string;\n  @Input() svgIconRight?: string;\n  @Input() size: ButtonSize = 'medium';\n  @Input() isDisabled = false;\n  @Input() isLoading = false;\n  @Output() onClick = new EventEmitter<Event>();\n  @Output() clicked = new EventEmitter<void>();\n\n  // Explicitly declare faSpinner as a readonly property\n  readonly faSpinner: IconDefinition = faSpinner;\n\n  constructor(private sanitizer: DomSanitizer) {}\n\n  get classes(): string {\n    return `button button--${this.size} button--${this.variant}`;\n  }\n\n  handleClick(event: Event) {\n    if (!this.isLoading && !this.isDisabled) {\n      this.onClick.emit(event);\n      this.clicked.emit();\n    }\n  }\n\n  getIcon(icon: IconDefinition | undefined): IconDefinition {\n    return icon || faQuestion;\n  }\n\n  sanitizeSvg(url?: string): SafeResourceUrl | string {\n    return url ? this.sanitizer.bypassSecurityTrustResourceUrl(url) : '';\n  }\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\n// design tokens\n@import '../../tokens/variables';\n\n// Button Base Styles\n.button {\n  font-family: \"Montserrat\", sans-serif;\n  font-weight: 700;\n  font-size: 13px;\n  border: 0;\n  border-radius: 8px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  line-height: 1;\n  padding: 10px;\n  letter-spacing: 2px;\n  background-color: $brand-purple-400; // Use SCSS variables\n\n  min-width: 46px;\n  min-height: 24px;\n  text-transform: capitalize;\n\n  // Button Icon\n  &__icon {\n    height: 16px;\n    width: 16px;\n    margin: 0 10px;\n  }\n\n  // Button Text\n  &__text {\n    font-size: 12px;\n    margin: 0 10px;\n  }\n\n  // Button Wrapper\n  &__wrapper {\n    display: flex;\n    justify-content: space-evenly;\n    align-items: center;\n    max-width: 300px;\n    max-height: 36px;\n  }\n\n  // Responsive Design\n  @media (max-width: 600px) {\n    width: 100%;\n  }\n\n  // Button Sizes\n  &--small {\n    padding: 5px;\n    font-size: 12px;\n    height: 24px;\n  }\n\n  &--medium {\n    padding: 10px;\n    font-size: 13px;\n    height: 36px;\n  }\n\n  &--large {\n    padding: 14px;\n    font-size: 14px;\n    height: 48px;\n  }\n\n  // Primary Button\n  &--primary {\n    color: $neutrals-white;\n\n    &:focus {\n      outline: 2px solid $brand-purple-300;\n      border: 2px solid $neutrals-white;\n    }\n\n    &:hover {\n      background-color: $data-purples-bright-purple-hover;\n    }\n\n    &:disabled {\n      cursor: not-allowed;\n      background-color: $neutrals-gray-200;\n      color: $neutrals-white;\n    }\n  }\n\n  // Secondary Button\n  &--secondary {\n    color: $data-purples-bright-purple-hover;\n    background-color: $neutrals-white;\n    border: 2px solid $brand-purple-400;\n\n    &:focus {\n      border: 2px solid $brand-purple-300;\n    }\n\n    &:hover {\n      background-color: $brand-purple-200;\n      border: 2px solid $data-purples-bright-purple-hover;\n    }\n\n    &:disabled {\n      cursor: not-allowed;\n      background-color: $neutrals-white;\n      border: 2px solid $neutrals-gray-200;\n      color: $neutrals-gray-200;\n    }\n  }\n\n  // Tertiary Button\n  &--tertiary {\n    color: $brand-purple-400;\n    background-color: $neutrals-white;\n\n    &:focus {\n      border: 2px solid $brand-purple-300;\n    }\n\n    &:hover {\n      background-color: $brand-purple-200;\n    }\n\n    &:disabled {\n      cursor: not-allowed;\n      background-color: $neutrals-white;\n      color: $neutrals-gray-200;\n    }\n  }\n\n  // Destructive Button\n  &--destructive {\n    color: $alerts-error;\n    border: 2px solid $alerts-error;\n    background-color: $neutrals-white;\n\n    &:focus {\n      outline: 2px solid $alerts-error;\n      outline-offset: -5px;\n      border: 2px solid $brand-purple-300;\n    }\n\n    &:hover {\n      background-color: $alerts-error-light-hover;\n      border: 2px solid $alerts-error;\n      outline: none;\n    }\n\n    &:disabled {\n      cursor: not-allowed;\n      background-color: $neutrals-white;\n      border: 2px solid $neutrals-gray-200;\n      color: $neutrals-gray-200;\n      fill: $neutrals-gray-200;\n    }\n  }\n\n  &--loading {\n    position: absolute;\n    font-size: 1.5em;\n    background-color: $ui-focus;\n  }\n\n  &--loading::before {\n    content: '';\n    display: inline-block;\n    width: .5em;\n    height: .5em;\n    border: 0.2em solid $neutrals-gray-200;\n    border-radius: 50%;\n    border-top-color: currentColor;\n    animation: spin 1s linear infinite;\n\n    @keyframes spin {\n      0% { transform: rotate(0deg); }\n      100% { transform: rotate(360deg); }\n    }\n  }\n}\n",
+                    "data": "@import '../../tokens/variables';\n\n.button {\n  font-family: \"Montserrat\", sans-serif;\n  font-weight: 700;\n  font-size: 13px;\n  border: 0;\n  border-radius: 8px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  line-height: 1;\n  padding: 10px;\n  letter-spacing: 2px;\n  background-color: $brand-purple-400;\n  min-width: 46px;\n  min-height: 24px;\n  text-transform: capitalize;\n\n  &__wrapper {\n    display: flex;\n    justify-content: space-evenly;\n    align-items: center;\n    max-width: 300px;\n    max-height: 36px;\n  }\n\n  &__icon {\n    width: 16px;\n    height: 16px;\n    margin: 0 10px;\n  }\n\n  &__text {\n    font-size: 12px;\n    margin: 0 10px;\n  }\n\n  @media (max-width: 600px) {\n    width: 100%;\n  }\n\n  &--small {\n    padding: 5px;\n    font-size: 12px;\n    min-height: 24px;\n  }\n\n  &--medium {\n    padding: 10px;\n    font-size: 13px;\n    min-height: 36px;\n  }\n\n  &--large {\n    padding: 14px;\n    font-size: 14px;\n    min-height: 48px;\n  }\n\n  &--primary {\n    color: $neutrals-white;\n    background-color: $brand-purple-400;\n    &:hover { background-color: $data-purples-bright-purple-hover; }\n    &:focus { outline: 2px solid $brand-purple-300; border: 2px solid $neutrals-white; }\n    &:disabled { \n      cursor: not-allowed; \n      background-color: $neutrals-gray-200; \n      color: $neutrals-white; \n    }\n  }\n\n  &--secondary {\n    color: $data-purples-bright-purple-hover;\n    background-color: $neutrals-white;\n    border: 2px solid $brand-purple-400;\n    &:hover { \n      background-color: $brand-purple-200; \n      border-color: $data-purples-bright-purple-hover; \n    }\n    &:focus { border-color: $brand-purple-300; }\n    &:disabled { \n      cursor: not-allowed; \n      background-color: $neutrals-white; \n      border-color: $neutrals-gray-200; \n      color: $neutrals-gray-200; \n    }\n  }\n\n  &--tertiary {\n    color: $brand-purple-400;\n    background-color: $neutrals-white;\n    &:hover { background-color: $brand-purple-200; }\n    &:focus { border: 2px solid $brand-purple-300; }\n    &:disabled { \n      cursor: not-allowed; \n      background-color: $neutrals-white; \n      color: $neutrals-gray-200; \n    }\n  }\n\n  &--destructive {\n    color: $alerts-error;\n    background-color: $neutrals-white;\n    border: 2px solid $alerts-error;\n    &:hover { \n      background-color: $alerts-error-light-hover; \n      border-color: $alerts-error; \n      outline: none; \n    }\n    &:focus { \n      outline: 2px solid $alerts-error; \n      outline-offset: -5px; \n      border-color: $brand-purple-300; \n    }\n    &:disabled { \n      cursor: not-allowed; \n      background-color: $neutrals-white; \n      border-color: $neutrals-gray-200; \n      color: $neutrals-gray-200; \n      fill: $neutrals-gray-200; \n    }\n  }\n}",
                     "styleUrl": "./button.component.scss"
                 }
             ],
             "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "sanitizer",
+                        "type": "DomSanitizer",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 37,
+                "jsdoctags": [
+                    {
+                        "name": "sanitizer",
+                        "type": "DomSanitizer",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
             "extends": [],
-            "implements": [
-                "ButtonProps"
-            ],
             "accessors": {
                 "classes": {
                     "name": "classes",
@@ -504,14 +762,14 @@
                         "name": "classes",
                         "type": "string",
                         "returnType": "string",
-                        "line": 39
+                        "line": 41
                     }
                 }
             },
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "ButtonComponent-1",
-            "templateData": "<button class=\"button\" [type]=\"type\" [ngClass]=\"classes\" (click)=\"handleClick($event)\" [disabled]=\"isDisabled\"\n  [attr.aria-label]=\"text\">\n  <div class=\"button__wrapper\">\n    <div class=\"button__icon-wrapper\" *ngIf=\"isLoading\">\n      <fa-icon [icon]=\"['fas', 'spinner']\" spin class=\"button_icon button__spinner\"></fa-icon>\n    </div>\n    <div class=\"button__icon-wrapper\" *ngIf=\"showIconLeft\">\n      <fa-icon *ngIf=\"showFaIconLeft && !showSvgIconLeft\" class=\"button__icon\" [icon]=\"faIconLeft\">\n      </fa-icon>\n      <img *ngIf=\"showSvgIconLeft && !showFaIconLeft\" class=\"button__icon\" [src]=\"svgIconLeft\" alt=\"\">\n    </div>\n    <span class=\"button__text\" *ngIf=\"text\">{{ text }}</span>\n    <div class=\"button__icon-wrapper\" *ngIf=\"showIconRight\">\n      <fa-icon *ngIf=\"showFaIconRight && !showSvgIconRight\" class=\"button__icon\" [icon]=\"faIconRight\">\n      </fa-icon>\n      <img *ngIf=\"showSvgIconRight && !showFaIconRight\" class=\"button__icon\" [src]=\"svgIconRight\" alt=\"\">\n    </div>\n  </div>\n</button>"
+            "templateData": "<button \n  class=\"button\" \n  [type]=\"type\" \n  [ngClass]=\"classes\" \n  (click)=\"handleClick($event)\" \n  [disabled]=\"isDisabled || isLoading\"\n  [attr.aria-label]=\"text\"\n>\n  <div class=\"button__wrapper\">\n    <fa-icon \n      *ngIf=\"isLoading\" \n      class=\"button__icon button__spinner\" \n      [icon]=\"faSpinner\" \n      [animation]=\"'spin'\"\n    ></fa-icon>\n\n    <ng-container *ngIf=\"!isLoading && showIconLeft\">\n      <fa-icon \n        *ngIf=\"showFaIconLeft && !showSvgIconLeft\" \n        class=\"button__icon\" \n        [icon]=\"getIcon(faIconLeft)\"\n      ></fa-icon>\n      <img \n        *ngIf=\"showSvgIconLeft && !showFaIconLeft\" \n        class=\"button__icon\" \n        [src]=\"sanitizeSvg(svgIconLeft)\" \n        alt=\"\"\n      >\n    </ng-container>\n\n    <span *ngIf=\"text\" class=\"button__text\">{{ text }}</span>\n\n    <ng-container *ngIf=\"!isLoading && showIconRight\">\n      <fa-icon \n        *ngIf=\"showFaIconRight && !showSvgIconRight\" \n        class=\"button__icon\" \n        [icon]=\"getIcon(faIconRight)\"\n      ></fa-icon>\n      <img \n        *ngIf=\"showSvgIconRight && !showFaIconRight\" \n        class=\"button__icon\" \n        [src]=\"sanitizeSvg(svgIconRight)\" \n        alt=\"\"\n      >\n    </ng-container>\n  </div>\n</button>"
         },
         {
             "name": "HeaderComponent",
@@ -601,7 +859,7 @@
         },
         {
             "name": "IconComponent",
-            "id": "component-IconComponent-844a14e38c76a0f6f7c3de169906639a449b2919f7c1267b8880d25d52ebd300f9397d064098c28b2518e2016b54f012d959adab6f907916ed70e3d2aa241480",
+            "id": "component-IconComponent-29bd7dd23476178ffc580cf0441f8d0a5270253c1f20e28a3d6c9e406f2f900a07c8491027c3c7576e572c2383eee00e62455141a2eacc409dcc6153913bb486",
             "file": "src/components/icon/icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -624,7 +882,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 19,
                     "type": "string",
                     "decorators": []
                 },
@@ -633,7 +891,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 18,
                     "type": "string",
                     "decorators": []
                 },
@@ -642,7 +900,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 17,
                     "type": "string",
                     "decorators": []
                 },
@@ -651,7 +909,7 @@
                     "defaultValue": "faQuestion",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 28,
+                    "line": 25,
                     "type": "IconDefinition",
                     "decorators": []
                 },
@@ -660,7 +918,7 @@
                     "defaultValue": "24",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 24,
+                    "line": 21,
                     "type": "number",
                     "decorators": []
                 },
@@ -669,7 +927,7 @@
                     "defaultValue": "'regular'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 31,
+                    "line": 28,
                     "type": "\"light\" | \"thin\" | \"regular\" | \"solid\"",
                     "decorators": []
                 },
@@ -678,7 +936,7 @@
                     "defaultValue": "24",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 25,
+                    "line": 22,
                     "type": "number",
                     "decorators": []
                 },
@@ -687,7 +945,7 @@
                     "defaultValue": "24",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 26,
+                    "line": 23,
                     "type": "number",
                     "decorators": []
                 },
@@ -696,7 +954,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 27,
+                    "line": 24,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -705,7 +963,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 29,
+                    "line": 26,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -714,16 +972,16 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 20,
                     "type": "string",
                     "decorators": []
                 },
                 {
                     "name": "svgIconSrc",
-                    "defaultValue": "\"/icons/rocket.svg\"",
+                    "defaultValue": "'/icons/rocket.svg'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 30,
+                    "line": 27,
                     "type": "SafeResourceUrl | string",
                     "decorators": []
                 },
@@ -732,7 +990,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 16,
                     "type": "boolean",
                     "decorators": []
                 }
@@ -746,7 +1004,7 @@
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 50,
+                    "line": 41,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -763,7 +1021,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 42,
+                    "line": 32,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -777,16 +1035,6 @@
                             }
                         }
                     ]
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 36,
-                    "deprecated": false,
-                    "deprecationMessage": ""
                 }
             ],
             "deprecated": false,
@@ -807,7 +1055,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, NO_ERRORS_SCHEMA, OnInit, SimpleChanges } from '@angular/core';\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\nimport { IconDefinition } from '@fortawesome/free-solid-svg-icons';\nimport { faIconsList } from './icons';\nimport { faQuestion } from '@fortawesome/free-solid-svg-icons';\nimport { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';\nimport { IconComponentProps } from './icon.types';\n\n@Component({\n  selector: 'icon',\n  standalone: true,\n  schemas: [NO_ERRORS_SCHEMA],\n  imports: [CommonModule, FontAwesomeModule],\n  templateUrl: './icon.component.html',\n  styleUrls: ['./icon.component.scss']\n})\nexport default class IconComponent implements IconComponentProps {\n  @Input() useDefaultAria? = false;\n  @Input() ariaLabelContainer? = '';\n  @Input() ariaLabel? = '';\n  @Input() altText = '';\n  @Input() srOnlyContent? = '';\n  @Input() faIconSize = 24;\n  @Input() iconHeight? = 24;\n  @Input() iconWidth? = 24;\n  @Input() showFaIcon? = false;\n  @Input() faIcon: IconDefinition = faQuestion;\n  @Input() showSvgIcon? = false;\n  @Input() svgIconSrc?: SafeResourceUrl | string = \"/icons/rocket.svg\";\n  @Input() faIconWeight: 'light' | 'thin' | 'regular' | 'solid' = 'regular';\n\n  constructor(private _sanitizer: DomSanitizer) {}\n\n\n  ngOnInit(): void {\n    if (typeof this.svgIconSrc === 'string') {\n      this.svgIconSrc = this._sanitizer.bypassSecurityTrustResourceUrl(\"/icons/rocket.svg\");\n    }\n  }\n\n  ngOnChanges(changes: SimpleChanges): void {\n    if (changes['faIcon']) {\n      this.ariaLabel = this.faIcon.iconName\n    }\n  }\n\n  \n\n  getFontAwesomeIcon(): string {\n    let weightClass = '';\n\n    switch (this.faIconWeight) {\n      case 'light':\n        weightClass = 'fal'; // Font Awesome Light\n        break;\n      case 'thin':\n        weightClass = 'fat'; // Font Awesome Thin\n        break;\n      case 'regular':\n        weightClass = 'far'; // Font Awesome Regular\n        break;\n      case 'solid':\n        weightClass = 'fas'; // Font Awesome Solid\n        break;\n    }\n\n    return `${weightClass} fa-${this.faIcon?.iconName} fa-${this.faIconSize}`;\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, OnChanges, SimpleChanges } from '@angular/core';\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\nimport { IconDefinition, faQuestion } from '@fortawesome/free-solid-svg-icons';\nimport { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';\nimport { IconComponentProps } from './icon.types';\n\n@Component({\n  selector: 'icon',\n  standalone: true,\n  imports: [CommonModule, FontAwesomeModule],\n  templateUrl: './icon.component.html',\n  styleUrls: ['./icon.component.scss']\n})\nexport class IconComponent implements IconComponentProps, OnChanges {\n  @Input() useDefaultAria = false;\n  @Input() ariaLabelContainer = '';\n  @Input() ariaLabel = '';\n  @Input() altText = '';\n  @Input() srOnlyContent = '';\n  @Input() faIconSize = 24;\n  @Input() iconHeight = 24;\n  @Input() iconWidth = 24;\n  @Input() showFaIcon = false;\n  @Input() faIcon: IconDefinition = faQuestion;\n  @Input() showSvgIcon = false;\n  @Input() svgIconSrc: SafeResourceUrl | string = '/icons/rocket.svg';\n  @Input() faIconWeight: 'light' | 'thin' | 'regular' | 'solid' = 'regular';\n\n  constructor(private sanitizer: DomSanitizer) {}\n\n  ngOnChanges(changes: SimpleChanges): void {\n    if (changes['svgIconSrc'] && typeof this.svgIconSrc === 'string') {\n      this.svgIconSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.svgIconSrc);\n    }\n    if (changes['faIcon'] && this.faIcon) {\n      this.ariaLabel = this.faIcon.iconName;\n    }\n  }\n\n  getFontAwesomeIcon(): string {\n    const weightClass = {\n      light: 'fal',\n      thin: 'fat',\n      regular: 'far',\n      solid: 'fas'\n    }[this.faIconWeight] || 'far';\n\n    return `${weightClass} fa-${this.faIcon.iconName} fa-${this.faIconSize}`;\n  }\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -823,16 +1071,16 @@
                 "deprecationMessage": "",
                 "args": [
                     {
-                        "name": "_sanitizer",
+                        "name": "sanitizer",
                         "type": "DomSanitizer",
                         "deprecated": false,
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 31,
+                "line": 28,
                 "jsdoctags": [
                     {
-                        "name": "_sanitizer",
+                        "name": "sanitizer",
                         "type": "DomSanitizer",
                         "deprecated": false,
                         "deprecationMessage": "",
@@ -844,9 +1092,10 @@
             },
             "extends": [],
             "implements": [
-                "IconComponentProps"
+                "IconComponentProps",
+                "OnChanges"
             ],
-            "templateData": "<div class=\"icon-container\" [ngStyle]=\"{\n       'height': iconHeight + 'px',\n       'width': iconWidth + 'px'\n     }\" role=\"img\" [attr.aria-label]=\"ariaLabelContainer\">\n\n  <!-- Font Awesome Icon -->\n  <fa-icon *ngIf=\"showFaIcon\" [icon]=\"faIcon\" [ngClass]=\"getFontAwesomeIcon()\"  [attr.aria-label]=\"ariaLabel\"\n    [attr.alt]=\"altText\" [ngStyle]=\"{'font-size.px': faIconSize}\">\n  </fa-icon>\n\n  <!-- SVG Icon -->\n  <img *ngIf=\"showSvgIcon && svgIconSrc\" [src]=\"svgIconSrc\" [attr.alt]=\"altText\" [style.width.px]=\"iconWidth\"\n    [style.height.px]=\"iconHeight\">\n\n  <!-- Screen Reader Content -->\n  <span *ngIf=\"!useDefaultAria\" class=\"sr-content\" [ngStyle]=\"{'textAlign': 'center'}\">\n    {{srOnlyContent}}\n  </span>\n</div>"
+            "templateData": "<div \n  class=\"icon-container\" \n  [ngStyle]=\"{ height: iconHeight + 'px', width: iconWidth + 'px' }\" \n  role=\"img\" \n  [attr.aria-label]=\"ariaLabelContainer\"\n>\n  <fa-icon \n    *ngIf=\"showFaIcon\" \n    [icon]=\"faIcon\" \n    [ngClass]=\"getFontAwesomeIcon()\" \n    [attr.aria-label]=\"ariaLabel\" \n    [attr.alt]=\"altText\" \n    [ngStyle]=\"{ 'font-size.px': faIconSize }\"\n  ></fa-icon>\n\n  <img \n    *ngIf=\"showSvgIcon && svgIconSrc\" \n    [src]=\"svgIconSrc\" \n    [attr.alt]=\"altText\" \n    [ngStyle]=\"{ width: iconWidth + 'px', height: iconHeight + 'px' }\"\n  >\n\n  <span \n    *ngIf=\"!useDefaultAria\" \n    class=\"sr-content\" \n    style=\"text-align: center\"\n  >{{ srOnlyContent }}</span>\n</div>"
         },
         {
             "name": "PageComponent",
@@ -875,6 +1124,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "User | null",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 69
@@ -943,7 +1193,7 @@
         },
         {
             "name": "TooltipComponent",
-            "id": "component-TooltipComponent-fb68a43146e126193bae70833c62d1f342304c9a1019f070f5307efbe4ed82ead6a634e116c374136ce7a849b534fec467c5ebe1f0357485034d1daf5da65f5f",
+            "id": "component-TooltipComponent-859865c07f5455339d29fa3cca740915d04f413adb5cab04ca640042db05550db7b4443a7c063be0799625054404b08ab699d14f4b1e60ead658f112ba7411dc",
             "file": "src/components/tooltip/tooltip.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -966,7 +1216,7 @@
                     "defaultValue": "'left-top'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 18,
                     "type": "\"left-center\" | \"left-top\" | \"left-bottom\" | \"top-center\" | \"top-left\" | \"top-right\" | \"right-top\" | \"right-center\" | \"right-bottom\" | \"bottom-center\" | \"bottom-left\" | \"bottom-right\" | \"none\"",
                     "decorators": []
                 },
@@ -975,7 +1225,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 16,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -984,7 +1234,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 15,
                     "type": "string",
                     "decorators": []
                 },
@@ -993,7 +1243,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 17,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -1002,7 +1252,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 14,
                     "type": "string",
                     "decorators": []
                 }
@@ -1015,18 +1265,21 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 21
+                    "line": 20
                 },
                 {
                     "name": "tooltipId",
+                    "defaultValue": "`tooltip-${Math.random().toString(36).slice(2, 11)}`",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "string",
+                    "type": "",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 22
+                    "line": 21
                 }
             ],
             "methodsClass": [
@@ -1043,7 +1296,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 52,
+                    "line": 40,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -1064,46 +1317,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 48,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 28,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "onMouseEnter",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 35,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "decorators": [
-                        {
-                            "name": "HostListener",
-                            "stringifiedArguments": "'mouseenter'"
-                        }
-                    ],
-                    "modifierKind": [
-                        170
-                    ]
-                },
-                {
-                    "name": "onMouseLeave",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 39,
+                    "line": 36,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "decorators": [
@@ -1117,14 +1331,33 @@
                     ]
                 },
                 {
+                    "name": "ngAfterViewInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
                     "name": "showTooltip",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 44,
+                    "line": 32,
                     "deprecated": false,
-                    "deprecationMessage": ""
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'mouseenter'"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ]
                 }
             ],
             "deprecated": false,
@@ -1137,7 +1370,7 @@
                     "argsDecorator": [],
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 35
+                    "line": 32
                 },
                 {
                     "name": "mouseleave",
@@ -1145,7 +1378,7 @@
                     "argsDecorator": [],
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 39
+                    "line": 36
                 }
             ],
             "standalone": true,
@@ -1158,11 +1391,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, NO_ERRORS_SCHEMA, OnInit, ElementRef, HostListener } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { TooltipProps } from './tooltip.types';\nimport { faTimes } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n    selector: 'app-tooltip',\n    standalone: true,\n    imports: [CommonModule],\n    schemas: [NO_ERRORS_SCHEMA],\n    templateUrl: './tooltip.component.html',\n    styleUrls: ['./tooltip.component.scss'],\n})\nexport default class TooltipComponent implements TooltipProps {\n    @Input() title?: string = ''\n    @Input() content?: string = ''; // Content to be displayed in the tooltip\n    @Input() boxShadow: boolean = false; \n    @Input() isVisible: boolean = false;// Option to add a box shadow\n    @Input() arrowPosition: 'left-center' | 'left-top' | 'left-bottom' | 'top-center' | 'top-left' | 'top-right' | 'right-top'| 'right-center'| 'right-bottom'| 'bottom-center' | 'bottom-left' | 'bottom-right' | 'none' = 'left-top'; \n\n    faTimes = faTimes;\n    tooltipId: string;\n\n    constructor(private elementRef: ElementRef) {\n      this.tooltipId = `tooltip-${Math.random().toString(36).substr(2, 9)}`;\n    }\n\n    ngOnInit() {\n      const triggerElement = this.elementRef.nativeElement.querySelector('[data-tooltip-trigger]');\n      if (triggerElement) {\n        triggerElement.setAttribute('aria-describedby', this.tooltipId);\n      }\n    }\n\n    @HostListener('mouseenter') onMouseEnter() {\n      this.showTooltip();\n    }\n  \n    @HostListener('mouseleave') onMouseLeave() {\n      this.hideTooltip();\n    }\n\n\n    showTooltip() {\n      this.isVisible = true;\n    }\n  \n    hideTooltip() {\n      this.isVisible = false;\n    }\n  \n    closeTooltip(event: Event) {\n      event.stopPropagation();\n      this.hideTooltip();\n    }\n    \n    // Position of the tooltip arrow \n\n    public get classes(): string {\n        let mode = '';\n\n        switch (this.arrowPosition) {\n            case 'left-center':\n                mode = 'left-center';\n                break;\n            case 'left-top':\n                mode = 'left-top';\n                break;\n            case 'left-bottom':\n                mode = 'left-bottom';\n                break;\n            case 'top-center':\n                mode = 'top-center';\n                break;\n            case 'top-left':\n                mode = 'top-left';\n                break;\n            case 'top-right':\n                mode = 'top-right';\n                break;\n            case 'right-top':\n                mode = 'right-top';\n                break;\n            case 'right-center':\n                mode = 'right-center';\n                break;\n            case 'right-bottom':\n                mode = 'right-bottom';\n                break;\n            case 'bottom-center':\n                mode = 'bottom-center';\n                break;\n            case 'bottom-left':\n                mode = 'bottom-left';\n                break;\n            case 'bottom-right':\n                mode = 'bottom-right';\n                break;\n            case 'none':\n                mode = 'none';\n                break;\n            default:\n                mode = ''; // Handle other cases if needed\n                break;\n        }\n\n        // Add the conditional box shadow class if boxShadow is true\n        const boxShadowClass = this.boxShadow ? ' tooltip--box-shadow' : '';\n\n        // Return the combined classes with or without the box shadow class\n        return `tooltip-wrapper tooltip tooltip__position--${mode} ${boxShadowClass}`;\n    }\n}\n",
+            "sourceCode": "import { Component, Input, ElementRef, HostListener } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { TooltipProps } from './tooltip.types';\nimport { faTimes } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'app-tooltip',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './tooltip.component.html',\n  styleUrls: ['./tooltip.component.scss'],\n})\nexport class TooltipComponent implements TooltipProps {\n  @Input() title = '';\n  @Input() content = '';\n  @Input() boxShadow = false;\n  @Input() isVisible = false;\n  @Input() arrowPosition: 'left-center' | 'left-top' | 'left-bottom' | 'top-center' | 'top-left' | 'top-right' | 'right-top' | 'right-center' | 'right-bottom' | 'bottom-center' | 'bottom-left' | 'bottom-right' | 'none' = 'left-top';\n\n  faTimes = faTimes;\n  tooltipId = `tooltip-${Math.random().toString(36).slice(2, 11)}`;\n\n  constructor(private elementRef: ElementRef) {}\n\n  ngAfterViewInit() {\n    const triggerElement = this.elementRef.nativeElement.querySelector('[data-tooltip-trigger]');\n    if (triggerElement) {\n      triggerElement.setAttribute('aria-describedby', this.tooltipId);\n    }\n  }\n\n  @HostListener('mouseenter') showTooltip() {\n    this.isVisible = true;\n  }\n\n  @HostListener('mouseleave') hideTooltip() {\n    this.isVisible = false;\n  }\n\n  closeTooltip(event: Event) {\n    event.stopPropagation();\n    this.hideTooltip();\n  }\n\n  get classes(): string {\n    const positionClass = this.arrowPosition !== 'none' ? `tooltip__position--${this.arrowPosition}` : '';\n    const boxShadowClass = this.boxShadow ? 'tooltip--box-shadow' : '';\n    return `tooltip-wrapper tooltip ${positionClass} ${boxShadowClass}`.trim();\n  }\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "// Define Sass variables for colors\n$neutrals-white: #ffffff;\n$neutrals-gray-200: #e0e0e0;\n\n// Mixin for tooltips\n@mixin tooltip-base {\n    display: block;\n    padding: 16px 24px;\n    position: relative;\n    background-color: $neutrals-white;\n    border: 1px solid $neutrals-gray-200;\n    border-radius: 10px;\n    min-width: 100px;\n    min-height: 100px;\n    max-width: max-content;\n    max-height: max-content;\n    font-family: \"Roboto\";\n    letter-spacing: 1px;\n    gap: 8px;\n}\n\n// Mixin for tooltip arrows\n// @mixin tooltip-arrow($position, $offset, $color) {\n//     @if $position == top {\n//       content: \"\";\n//       position: absolute;\n//       top: $offset;\n//       left: 100%; // Adjust this if needed\n//       width: 0;\n//       height: 0;\n//       border-top: 10px solid transparent;\n//       border-bottom: 10px solid transparent;\n//       border-left: 10px solid $color;\n//       transform: translateX(-100%); // Adjust if needed\n//     } @else if $position == bottom {\n//       content: \"\";\n//       position: absolute;\n//       bottom: $offset;\n//       left: 100%; // Adjust this if needed\n//       width: 0;\n//       height: 0;\n//       border-top: 10px solid $color;\n//       border-bottom: 10px solid transparent;\n//       border-left: 10px solid transparent;\n//       transform: translateX(-100%); // Adjust if needed\n//     } @else if $position == center {\n//       content: \"\";\n//       position: absolute;\n//       top: 50%;\n//       left: 100%; // Adjust this if needed\n//       transform: translateY(-50%) translateX(-100%); // Adjust if needed\n//       width: 0;\n//       height: 0;\n//       border-top: 10px solid transparent;\n//       border-bottom: 10px solid transparent;\n//       border-left: 10px solid $color;\n//     }\n//   }\n  \n\n\n// Base tooltip styling\n.tooltip {\n    @include tooltip-base;\n\n    &__title {\n        line-height: 18.8px;\n        font-weight: 600;\n    }\n\n    &__content {\n        font-size: 14px;\n        font-weight: 300;\n        line-height: 140%;\n        margin: 28px 0;\n    }\n\n    &--box-shadow {\n        filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.16));\n    }\n\n    // Arrow positions\n    // &__position--left-top::before {\n    //     @include tooltip-arrow(top, 10px, $neutrals-gray-200);\n    // }\n\n    // &__position--left-top::before {\n    //     @include tooltip-arrow(top, 10px, $neutrals-gray-200);\n    //   }\n      \n    //   &__position--left-top::after {\n    //     @include tooltip-arrow(top, 12px, $neutrals-white);\n    //   }\n      \n    //   &__position--left-center::before {\n    //     @include tooltip-arrow(center, 50%, $neutrals-gray-200);\n    //   }\n      \n    //   &__position--left-center::after {\n    //     @include tooltip-arrow(center, 50%, $neutrals-white);\n    //   }\n      \n    //   &__position--left-bottom::before {\n    //     @include tooltip-arrow(bottom, 10px, $neutrals-gray-200);\n    //   }\n      \n    //   &__position--left-bottom::after {\n    //     @include tooltip-arrow(bottom, 12px, $neutrals-white);\n    //   }\n\n    &__position--top-center::before {\n        content: \"\";\n        position: absolute;\n        top: -10px;\n        left: 50%;\n        transform: translateX(-50%);\n        border-bottom: 10px solid $neutrals-gray-200;\n        border-right: 10px solid transparent;\n        border-left: 10px solid transparent;\n    }\n\n    &__position--top-center::after {\n        content: \"\";\n        position: absolute;\n        top: -8px;\n        left: 50%;\n        transform: translateX(-50%);\n        border-bottom: 8px solid $neutrals-white;\n        border-right: 8px solid transparent;\n        border-left: 8px solid transparent;\n    }\n\n    &__position--top-left::before {\n        content: \"\";\n        position: absolute;\n        top: -10px;\n        left: 10px;\n        border-bottom: 10px solid $neutrals-gray-200;\n        border-right: 10px solid transparent;\n        border-left: 10px solid transparent;\n    }\n\n    &__position--top-left::after {\n        content: \"\";\n        position: absolute;\n        top: -8px;\n        left: 12px;\n        border-bottom: 8px solid $neutrals-white;\n        border-right: 8px solid transparent;\n        border-left: 8px solid transparent;\n    }\n\n    &__position--top-right::before {\n        content: \"\";\n        position: absolute;\n        top: -10px;\n        right: 10px;\n        border-bottom: 10px solid $neutrals-gray-200;\n        border-right: 10px solid transparent;\n        border-left: 10px solid transparent;\n    }\n\n    &__position--top-right::after {\n        content: \"\";\n        position: absolute;\n        top: -8px;\n        right: 12px;\n        border-bottom: 8px solid $neutrals-white;\n        border-right: 8px solid transparent;\n        border-left: 8px solid transparent;\n    }\n\n    &__position--left-top::before {\n        content: \"\";\n        position: absolute;\n        top: 10px;\n        left: -10px;\n        width: 0;\n        height: 0;\n        border-top: 10px solid transparent;\n        border-bottom: 10px solid transparent;\n        border-right: 10px solid $neutrals-gray-200;\n    }\n    \n    &__position--left-top::after {\n        content: \"\";\n        position: absolute;\n        top: 12px;\n        left: -8px;\n        width: 0;\n        height: 0;\n        border-top: 8px solid transparent;\n        border-bottom: 8px solid transparent;\n        border-right: 8px solid $neutrals-white;\n    }\n    \n    &__position--left-center::before {\n        content: \"\";\n        position: absolute;\n        top: 50%;\n        transform: translateY(-50%);\n        left: -10px;\n        width: 0;\n        height: 0;\n        border-top: 10px solid transparent;\n        border-bottom: 10px solid transparent;\n        border-right: 10px solid $neutrals-gray-200;\n    }\n    \n    &__position--left-center::after {\n        content: \"\";\n        position: absolute;\n        top: 50%;\n        transform: translateY(-50%);\n        left: -8px;\n        width: 0;\n        height: 0;\n        border-top: 8px solid transparent;\n        border-bottom: 8px solid transparent;\n        border-right: 8px solid $neutrals-white;\n    }\n    \n    &__position--left-bottom::before {\n        content: \"\";\n        position: absolute;\n        bottom: 10px;\n        left: -10px;\n        width: 0;\n        height: 0;\n        border-top: 10px solid transparent;\n        border-bottom: 10px solid transparent;\n        border-right: 10px solid $neutrals-gray-200;\n    }\n    \n    &__position--left-bottom::after {\n        content: \"\";\n        position: absolute;\n        bottom: 12px;\n        left: -8px;\n        width: 0;\n        height: 0;\n        border-top: 8px solid transparent;\n        border-bottom: 8px solid transparent;\n        border-right: 8px solid $neutrals-white;\n    }\n\n    &__position--right-top::before {\n        content: \"\";\n        position: absolute;\n        top: 10px;\n        right: -10px;\n        width: 0;\n        height: 0;\n        border-top: 10px solid transparent;\n        border-bottom: 10px solid transparent;\n        border-left: 10px solid $neutrals-gray-200;\n    }\n    \n    &__position--right-top::after {\n        content: \"\";\n        position: absolute;\n        top: 12px;\n        right: -8px;\n        width: 0;\n        height: 0;\n        border-top: 8px solid transparent;\n        border-bottom: 8px solid transparent;\n        border-left: 8px solid $neutrals-white;\n    }\n    \n    &__position--right-center::before {\n        content: \"\";\n        position: absolute;\n        top: 50%;\n        transform: translateY(-50%);\n        right: -10px;\n        width: 0;\n        height: 0;\n        border-top: 10px solid transparent;\n        border-bottom: 10px solid transparent;\n        border-left: 10px solid $neutrals-gray-200;\n    }\n    \n    &__position--right-center::after {\n        content: \"\";\n        position: absolute;\n        top: 50%;\n        transform: translateY(-50%);\n        right: -8px;\n        width: 0;\n        height: 0;\n        border-top: 8px solid transparent;\n        border-bottom: 8px solid transparent;\n        border-left: 8px solid $neutrals-white;\n    }\n    \n    &__position--right-bottom::before {\n        content: \"\";\n        position: absolute;\n        bottom: 10px;\n        right: -10px;\n        width: 0;\n        height: 0;\n        border-top: 10px solid transparent;\n        border-bottom: 10px solid transparent;\n        border-left: 10px solid $neutrals-gray-200;\n    }\n    \n    &__position--right-bottom::after {\n        content: \"\";\n        position: absolute;\n        bottom: 12px;\n        right: -8px;\n        width: 0;\n        height: 0;\n        border-top: 8px solid transparent;\n        border-bottom: 8px solid transparent;\n        border-left: 8px solid $neutrals-white;\n    }\n\n    &__position--bottom-center::before {\n        content: \"\";\n        position: absolute;\n        bottom: -10px;\n        left: 50%;\n        transform: translateX(-50%);\n        border-top: 10px solid $neutrals-gray-200;\n        border-right: 10px solid transparent;\n        border-left: 10px solid transparent;\n    }\n\n    &__position--bottom-center::after {\n        content: \"\";\n        position: absolute;\n        bottom: -8px;\n        left: 50%;\n        transform: translateX(-50%);\n        border-top: 8px solid $neutrals-white;\n        border-right: 8px solid transparent;\n        border-left: 8px solid transparent;\n    }\n\n    &__position--bottom-left::before {\n        content: \"\";\n        position: absolute;\n        bottom: -10px;\n        left: 10px;\n        border-top: 10px solid $neutrals-gray-200;\n        border-right: 10px solid transparent;\n        border-left: 10px solid transparent;\n    }\n\n    &__position--bottom-left::after {\n        content: \"\";\n        position: absolute;\n        bottom: -8px;\n        left: 12px;\n        border-top: 8px solid $neutrals-white;\n        border-right: 8px solid transparent;\n        border-left: 8px solid transparent;\n    }\n\n    &__position--bottom-right::before {\n        content: \"\";\n        position: absolute;\n        bottom: -10px;\n        left: 90%;\n        transform: translateX(-50%);\n        border-top: 10px solid $neutrals-gray-200;\n        border-right: 10px solid transparent;\n        border-left: 10px solid transparent;\n    }\n\n    &__position--bottom-right::after {\n        content: \"\";\n        position: absolute;\n        bottom: -8px;\n        left: 90%;\n        transform: translateX(-50%);\n        border-top: 8px solid $neutrals-white;\n        border-right: 8px solid transparent;\n        border-left: 8px solid transparent;\n    }\n}",
+                    "data": "$neutrals-white: #ffffff;\n$neutrals-gray-200: #e0e0e0;\n\n@mixin tooltip-base {\n  display: block;\n  padding: 16px 24px;\n  position: relative;\n  background-color: $neutrals-white;\n  border: 1px solid $neutrals-gray-200;\n  border-radius: 10px;\n  min-width: 100px;\n  min-height: 100px;\n  max-width: max-content;\n  max-height: max-content;\n  font-family: \"Roboto\";\n  letter-spacing: 1px;\n  gap: 8px;\n}\n\n@mixin tooltip-arrow($direction, $position, $offset: 10px, $color: $neutrals-gray-200, $size: 10px, $offset-adjust: 2px) {\n  content: \"\";\n  position: absolute;\n  @if $direction == top {\n    top: -$offset;\n    left: $position;\n    transform: translateX(-50%);\n    border-bottom: $size solid $color;\n    border-right: $size solid transparent;\n    border-left: $size solid transparent;\n  } @else if $direction == bottom {\n    bottom: -$offset;\n    left: $position;\n    transform: translateX(-50%);\n    border-top: $size solid $color;\n    border-right: $size solid transparent;\n    border-left: $size solid transparent;\n  } @else if $direction == left {\n    left: -$offset;\n    top: $position;\n    transform: if($position == 50%, translateY(-50%), null);\n    border-right: $size solid $color;\n    border-top: $size solid transparent;\n    border-bottom: $size solid transparent;\n  } @else if $direction == right {\n    right: -$offset;\n    top: $position;\n    transform: if($position == 50%, translateY(-50%), null);\n    border-left: $size solid $color;\n    border-top: $size solid transparent;\n    border-bottom: $size solid transparent;\n  }\n  width: 0;\n  height: 0;\n}\n\n.tooltip {\n  @include tooltip-base;\n\n  &__title {\n    line-height: 18.8px;\n    font-weight: 600;\n  }\n\n  &__content {\n    font-size: 14px;\n    font-weight: 300;\n    line-height: 140%;\n    margin: 28px 0;\n  }\n\n  &--box-shadow {\n    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.16));\n  }\n\n  // Top arrow positions\n  &__position--top-center {\n    &::before { @include tooltip-arrow(top, 50%, 10px, $neutrals-gray-200, 10px); }\n    &::after { @include tooltip-arrow(top, 50%, 8px, $neutrals-white, 8px); }\n  }\n\n  &__position--top-left {\n    &::before { @include tooltip-arrow(top, 10px, 10px, $neutrals-gray-200, 10px); }\n    &::after { @include tooltip-arrow(top, 12px, 8px, $neutrals-white, 8px); }\n  }\n\n  &__position--top-right {\n    &::before { @include tooltip-arrow(top, calc(100% - 10px), 10px, $neutrals-gray-200, 10px); }\n    &::after { @include tooltip-arrow(top, calc(100% - 12px), 8px, $neutrals-white, 8px); }\n  }\n\n  // Left arrow positions\n  &__position--left-top {\n    &::before { @include tooltip-arrow(left, 10px, 10px, $neutrals-gray-200, 10px); }\n    &::after { @include tooltip-arrow(left, 12px, 8px, $neutrals-white, 8px); }\n  }\n\n  &__position--left-center {\n    &::before { @include tooltip-arrow(left, 50%, 10px, $neutrals-gray-200, 10px); }\n    &::after { @include tooltip-arrow(left, 50%, 8px, $neutrals-white, 8px); }\n  }\n\n  &__position--left-bottom {\n    &::before { @include tooltip-arrow(left, calc(100% - 23px), 10px, $neutrals-gray-200, 10px); }\n    &::after { @include tooltip-arrow(left, calc(100% - 25px), 8px, $neutrals-white, 8px); }\n  }\n\n  // Right arrow positions\n  &__position--right-top {\n    &::before { @include tooltip-arrow(right, 10px, 10px, $neutrals-gray-200, 10px); }\n    &::after { @include tooltip-arrow(right, 12px, 8px, $neutrals-white, 8px); }\n  }\n\n  &__position--right-center {\n    &::before { @include tooltip-arrow(right, 50%, 10px, $neutrals-gray-200, 10px); }\n    &::after { @include tooltip-arrow(right, 50%, 8px, $neutrals-white, 8px); }\n  }\n\n  &__position--right-bottom {\n    &::before { @include tooltip-arrow(right, calc(100% - 23px), 10px, $neutrals-gray-200, 10px); }\n    &::after { @include tooltip-arrow(right, calc(100% - 25px), 8px, $neutrals-white, 8px); }\n  }\n\n  // Bottom arrow positions\n  &__position--bottom-center {\n    &::before { @include tooltip-arrow(bottom, 50%, 10px, $neutrals-gray-200, 10px); }\n    &::after { @include tooltip-arrow(bottom, 50%, 8px, $neutrals-white, 8px); }\n  }\n\n  &__position--bottom-left {\n    &::before { @include tooltip-arrow(bottom, 10px, 10px, $neutrals-gray-200, 10px); }\n    &::after { @include tooltip-arrow(bottom, 12px, 8px, $neutrals-white, 8px); }\n  }\n\n  &__position--bottom-right {\n    &::before { @include tooltip-arrow(bottom, 90%, 10px, $neutrals-gray-200, 10px); }\n    &::after { @include tooltip-arrow(bottom, 90%, 8px, $neutrals-white, 8px); }\n  }\n}",
                     "styleUrl": "./tooltip.component.scss"
                 }
             ],
@@ -1180,7 +1413,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 22,
+                "line": 21,
                 "jsdoctags": [
                     {
                         "name": "elementRef",
@@ -1204,11 +1437,11 @@
                         "name": "classes",
                         "type": "string",
                         "returnType": "string",
-                        "line": 59
+                        "line": 45
                     }
                 }
             },
-            "templateData": "\n<div class=\"tooltip-container\">\n    <div data-tooltip-trigger (mouseenter)=\"showTooltip()\" (mouseleave)=\"hideTooltip()\" (focus)=\"showTooltip()\"\n        (blur)=\"hideTooltip()\" [attr.aria-describedby]=\"tooltipId\">\n        \n        \n    </div>\n    <div class=\"tooltip\" [id]=\"tooltipId\" *ngIf=\"isVisible\" [ngClass]=\"classes\" role=\"tooltip\"\n        [attr.data-tooltip-position]=\"arrowPosition\" [attr.aria-hidden]=\"!isVisible\">\n        <h3 class=\"tooltip__title\" *ngIf=\"title\">{{ title }}</h3>\n        <p class=\"tooltip__content\" *ngIf=\"content\">{{ content }}</p>\n        <ng-content></ng-content>\n    </div>\n</div>"
+            "templateData": "<div class=\"tooltip-container\">\n  <div \n    #triggerElement\n    data-tooltip-trigger \n    (mouseenter)=\"showTooltip()\" \n    (mouseleave)=\"hideTooltip()\" \n    (focus)=\"showTooltip()\" \n    (blur)=\"hideTooltip()\" \n    [attr.aria-describedby]=\"tooltipId\"\n    tabindex=\"0\"\n  >\n    <ng-content select=\"[data-tooltip-trigger]\"></ng-content>\n  </div>\n  <div \n    class=\"tooltip\" \n    [id]=\"tooltipId\" \n    *ngIf=\"isVisible\" \n    [ngClass]=\"classes\" \n    role=\"tooltip\" \n    [attr.data-tooltip-position]=\"arrowPosition\" \n    [attr.aria-hidden]=\"!isVisible\"\n  >\n    <h3 *ngIf=\"title\" class=\"tooltip__title\">{{ title }}</h3>\n    <p *ngIf=\"content\" class=\"tooltip__content\">{{ content }}</p>\n    <ng-content></ng-content>\n  </div>\n</div>"
         }
     ],
     "modules": [
@@ -1324,17 +1557,6 @@
                 "kind": 192
             },
             {
-                "name": "ButtonProps",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "literal type",
-                "file": "src/components/button/button.types.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 187
-            },
-            {
                 "name": "ButtonSize",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
@@ -1346,10 +1568,21 @@
                 "kind": 192
             },
             {
+                "name": "ButtonType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"button\" | \"submit\" | \"reset\"",
+                "file": "src/components/button/button.types.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            },
+            {
                 "name": "ButtonVariant",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "\"primary\" | \"secondary\" | \"tertiary\" | \"destructive\" | \"loading\"",
+                "rawtype": "\"primary\" | \"secondary\" | \"tertiary\" | \"destructive\"",
                 "file": "src/components/button/button.types.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1469,17 +1702,6 @@
             ],
             "src/components/button/button.types.ts": [
                 {
-                    "name": "ButtonProps",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "literal type",
-                    "file": "src/components/button/button.types.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 187
-                },
-                {
                     "name": "ButtonSize",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
@@ -1491,10 +1713,21 @@
                     "kind": 192
                 },
                 {
+                    "name": "ButtonType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"button\" | \"submit\" | \"reset\"",
+                    "file": "src/components/button/button.types.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                },
+                {
                     "name": "ButtonVariant",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "\"primary\" | \"secondary\" | \"tertiary\" | \"destructive\" | \"loading\"",
+                    "rawtype": "\"primary\" | \"secondary\" | \"tertiary\" | \"destructive\"",
                     "file": "src/components/button/button.types.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -1519,7 +1752,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 6,
+        "count": 4,
         "status": "low",
         "files": [
             {
@@ -1567,7 +1800,46 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/22",
+                "coverageCount": "0/24",
+                "status": "low"
+            },
+            {
+                "filePath": "src/components/button/button.types.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ButtonProps",
+                "coveragePercent": 0,
+                "coverageCount": "0/19",
+                "status": "low"
+            },
+            {
+                "filePath": "src/components/button/button.types.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "ButtonSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/components/button/button.types.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "ButtonType",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/components/button/button.types.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "ButtonVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -1576,7 +1848,17 @@
                 "linktype": "component",
                 "name": "IconComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/18",
+                "coverageCount": "0/17",
+                "status": "low"
+            },
+            {
+                "filePath": "src/components/icon/icon.types.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "IconComponentProps",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -1595,7 +1877,27 @@
                 "linktype": "component",
                 "name": "TooltipComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/17",
+                "coverageCount": "0/15",
+                "status": "low"
+            },
+            {
+                "filePath": "src/components/tooltip/tooltip.types.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "ArrowPositionProps",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/components/tooltip/tooltip.types.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "TooltipProps",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

@@ -1,12 +1,12 @@
-import { IconDefinition, IconName, IconPrefix } from '@fortawesome/fontawesome-svg-core';
 import { Meta, StoryObj } from '@storybook/angular';
-import IconComponent from './icon.component';
 import { moduleMetadata } from '@storybook/angular';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faArrowDown, faArrowLeft, faArrowRight, faArrowUp, faCableCar } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { faCableCar } from '@fortawesome/free-solid-svg-icons';
+import { IconComponent } from './icon.component';
 import { faIconsList } from './icons';
 
-const svg = "/icons/rocket.svg";
+const svg = '/icons/rocket.svg';
 
 export default {
   title: 'Components/Icon',
@@ -19,50 +19,25 @@ export default {
   tags: ['autodocs'],
   argTypes: {
     faIcon: {
-      if: { arg: 'showFaIcon' },
-      options: faIconsList.map(option => option.label),
       control: { type: 'select' },
-      mapping: faIconsList.reduce<{ [key: string]: IconDefinition }>((acc, cur) => {
-        acc[cur.label] = cur.value;
-        return acc;
-      }, {}),
-      onchange: (faIconName: string | IconDefinition) => {
-        let faIcon: IconDefinition;
-        let faPrefix: IconPrefix;
-        let faIdentifier: IconName;
-        if (typeof faIconName === 'string') {
-          const option = faIconsList.find(option => option.label === faIconName);
-          if (!option) throw new Error(`Icon "${faIconName}" not found.`);
-          faIcon = option.value;
-          faPrefix = option.value.prefix;
-          faIdentifier = option.value.iconName;
-        } else {
-          faIcon = faIconName;
-        }
-        return {
-          faPrefix: faIcon.prefix,
-          faIdentifier: faIcon.iconName,
-          faIcon: faIcon.icon,
-        };
-      },
+      options: faIconsList.map(option => option.label),
+      mapping: faIconsList.reduce((acc, { label, value }) => ({
+        ...acc,
+        [label]: value,
+      }), {} as { [key: string]: IconDefinition }),
     },
     showFaIcon: { control: 'boolean' },
     showSvgIcon: { control: 'boolean' },
     svgIconSrc: { control: 'text' },
     faIconWeight: {
-      control: {
-        type: 'select',
-        options: ['light', 'thin', 'regular', 'solid']
-      },
+      control: { type: 'select' },
+      options: ['light', 'thin', 'regular', 'solid'],
     },
-    faIconSize:
-      { control: 'number' }
-    ,
+    faIconSize: { control: 'number' },
     iconWidth: { control: 'number' },
     iconHeight: { control: 'number' },
     ariaLabel: { control: 'text' },
     altText: { control: 'text' },
-    faIconAriaLabel: { control: 'text'},
   },
 } as Meta<IconComponent>;
 

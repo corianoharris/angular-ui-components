@@ -1,3 +1,3 @@
-import IconComponent from "./icon.component";
+import { IconComponent } from "./icon.component";
 
 export default IconComponent;

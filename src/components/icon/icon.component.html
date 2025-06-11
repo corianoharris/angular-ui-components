@@ -1,19 +1,28 @@
-<div class="icon-container" [ngStyle]="{
-       'height': iconHeight + 'px',
-       'width': iconWidth + 'px'
-     }" role="img" [attr.aria-label]="ariaLabelContainer">
+<div 
+  class="icon-container" 
+  [ngStyle]="{ height: iconHeight + 'px', width: iconWidth + 'px' }" 
+  role="img" 
+  [attr.aria-label]="ariaLabelContainer"
+>
+  <fa-icon 
+    *ngIf="showFaIcon" 
+    [icon]="faIcon" 
+    [ngClass]="getFontAwesomeIcon()" 
+    [attr.aria-label]="ariaLabel" 
+    [attr.alt]="altText" 
+    [ngStyle]="{ 'font-size.px': faIconSize }"
+  ></fa-icon>
 
-  <!-- Font Awesome Icon -->
-  <fa-icon *ngIf="showFaIcon" [icon]="faIcon" [ngClass]="getFontAwesomeIcon()"  [attr.aria-label]="ariaLabel"
-    [attr.alt]="altText" [ngStyle]="{'font-size.px': faIconSize}">
-  </fa-icon>
+  <img 
+    *ngIf="showSvgIcon && svgIconSrc" 
+    [src]="svgIconSrc" 
+    [attr.alt]="altText" 
+    [ngStyle]="{ width: iconWidth + 'px', height: iconHeight + 'px' }"
+  >
 
-  <!-- SVG Icon -->
-  <img *ngIf="showSvgIcon && svgIconSrc" [src]="svgIconSrc" [attr.alt]="altText" [style.width.px]="iconWidth"
-    [style.height.px]="iconHeight">
-
-  <!-- Screen Reader Content -->
-  <span *ngIf="!useDefaultAria" class="sr-content" [ngStyle]="{'textAlign': 'center'}">
-    {{srOnlyContent}}
-  </span>
+  <span 
+    *ngIf="!useDefaultAria" 
+    class="sr-content" 
+    style="text-align: center"
+  >{{ srOnlyContent }}</span>
 </div>

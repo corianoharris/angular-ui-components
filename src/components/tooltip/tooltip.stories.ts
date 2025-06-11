@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/angular';
-import TooltipComponent from './tooltip.component';
+import { TooltipComponent } from './tooltip.component';
 
 export default {
   title: 'Components/Tooltip',
@@ -7,84 +7,80 @@ export default {
   argTypes: {
     boxShadow: { control: 'boolean' },
     arrowPosition: {
+      control: { type: 'select' },
       options: [
-        'none', 
-        'left-center', 'left-top', 'left-bottom', 
-        'top-center', 'top-left', 'top-right', 
-        'right-top', 'right-center', 'right-bottom', 
-        'bottom-center', 'bottom-left', 'bottom-right'
+        'none',
+        'left-center', 'left-top', 'left-bottom',
+        'top-center', 'top-left', 'top-right',
+        'right-top', 'right-center', 'right-bottom',
+        'bottom-center', 'bottom-left', 'bottom-right',
       ],
-      control: {
-        type: 'select',
-      },
     },
     content: { control: 'text' },
     title: { control: 'text' },
-    isVisible: { control: 'boolean' }
+    isVisible: { control: 'boolean' },
   },
-} as Meta;
+} as Meta<TooltipComponent>;
 
 type Story = StoryObj<TooltipComponent>;
 
+const defaultArgs = {
+  boxShadow: true,
+  isVisible: true,
+};
+
 export const NoArrow: Story = {
   args: {
-    content: 'This is a tooltip with no arrow',
-    boxShadow: true,
-    isVisible: true,
+    ...defaultArgs,
+    content: 'Tooltip with no arrow',
     arrowPosition: 'none',
   },
 };
 
 export const ArrowLeftCenter: Story = {
   args: {
-    content: 'This is a tooltip with arrow at left center',
-    boxShadow: true,
-    isVisible: true,
+    ...defaultArgs,
+    content: 'Tooltip with arrow at left center',
     arrowPosition: 'left-center',
   },
 };
 
 export const ArrowLeftTop: Story = {
   args: {
-    content: 'This is a tooltip with arrow at left top',
-    boxShadow: true,
-    isVisible: true,
+    ...defaultArgs,
+    content: 'Tooltip with arrow at left top',
     arrowPosition: 'left-top',
   },
 };
 
 export const ArrowRightTop: Story = {
   args: {
-    content: 'This is a tooltip with arrow at right top',
-    boxShadow: true,
-    isVisible: true,
+    ...defaultArgs,
+    content: 'Tooltip with arrow at right top',
     arrowPosition: 'right-top',
   },
 };
 
 export const ArrowRightBottom: Story = {
   args: {
-    content: 'This is a tooltip with arrow at right bottom',
-    boxShadow: true,
-    isVisible: true,
+    ...defaultArgs,
+    content: 'Tooltip with arrow at right bottom',
     arrowPosition: 'right-bottom',
   },
 };
 
 export const ArrowLeftBottom: Story = {
   args: {
-    content: 'This is a tooltip with arrow at left bottom',
-    boxShadow: true,
-    isVisible: true,
+    ...defaultArgs,
+    content: 'Tooltip with arrow at left bottom',
     arrowPosition: 'left-bottom',
   },
 };
 
 export const ArrowCenterTop: Story = {
   args: {
-    content: 'This is a tooltip with arrow at top center',
-    boxShadow: true,
-    isVisible: true,
+    ...defaultArgs,
+    content: 'Tooltip with arrow at top center',
     arrowPosition: 'top-center',
   },
 };

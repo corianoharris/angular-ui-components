@@ -1,14 +1,27 @@
-
 <div class="tooltip-container">
-    <div data-tooltip-trigger (mouseenter)="showTooltip()" (mouseleave)="hideTooltip()" (focus)="showTooltip()"
-        (blur)="hideTooltip()" [attr.aria-describedby]="tooltipId">
-        
-        
-    </div>
-    <div class="tooltip" [id]="tooltipId" *ngIf="isVisible" [ngClass]="classes" role="tooltip"
-        [attr.data-tooltip-position]="arrowPosition" [attr.aria-hidden]="!isVisible">
-        <h3 class="tooltip__title" *ngIf="title">{{ title }}</h3>
-        <p class="tooltip__content" *ngIf="content">{{ content }}</p>
-        <ng-content></ng-content>
-    </div>
+  <div 
+    #triggerElement
+    data-tooltip-trigger 
+    (mouseenter)="showTooltip()" 
+    (mouseleave)="hideTooltip()" 
+    (focus)="showTooltip()" 
+    (blur)="hideTooltip()" 
+    [attr.aria-describedby]="tooltipId"
+    tabindex="0"
+  >
+    <ng-content select="[data-tooltip-trigger]"></ng-content>
+  </div>
+  <div 
+    class="tooltip" 
+    [id]="tooltipId" 
+    *ngIf="isVisible" 
+    [ngClass]="classes" 
+    role="tooltip" 
+    [attr.data-tooltip-position]="arrowPosition" 
+    [attr.aria-hidden]="!isVisible"
+  >
+    <h3 *ngIf="title" class="tooltip__title">{{ title }}</h3>
+    <p *ngIf="content" class="tooltip__content">{{ content }}</p>
+    <ng-content></ng-content>
+  </div>
 </div>

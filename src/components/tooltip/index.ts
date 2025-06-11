@@ -1,2 +1,2 @@
-import TooltipComponent from "./tooltip.component";
+import { TooltipComponent } from "./tooltip.component";
 export default TooltipComponent;

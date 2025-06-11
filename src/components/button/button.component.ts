@@ -1,59 +1,59 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import IconComponent from '../icon';
-import { SafeResourceUrl } from '@angular/platform-browser';
-import { ButtonVariant, ButtonSize, ButtonProps } from './button.types';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import { faIconsList } from '../icon/icons';
-import { faQuestion } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition, faQuestion, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { ButtonVariant, ButtonSize } from './button.types';
 
 @Component({
   selector: 'app-button',
+  standalone: true,
+  imports: [CommonModule, FontAwesomeModule],
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
-  standalone: true,
-  imports: [CommonModule, IconComponent, FontAwesomeModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class ButtonComponent implements ButtonProps {
-  @Input() faIconLeft: IconDefinition | string = faQuestion;
-  @Input() faIconRight: IconDefinition | string = faQuestion; 
-  @Input() variant: ButtonVariant = 'primary'; 
-  @Input() text: string = '';
-  @Input() type: string = '';
-  @Input() showFaIconLeft?: boolean;
-  @Input() showFaIconRight?: boolean;
-  @Input() showSvgIconLeft?: boolean;
-  @Input() showSvgIconRight?: boolean;
-  @Input() isText?: boolean;
-  @Input() showIconLeft?: boolean;
-  @Input() showIconRight?: boolean;
-  @Input() svgIconLeft?: SafeResourceUrl | undefined = "icons/rocket.svg";
-  @Input() svgIconRight?: SafeResourceUrl  | undefined = "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/osa.svg";
+export class ButtonComponent {
+  @Input() faIconLeft: IconDefinition = faQuestion;
+  @Input() faIconRight: IconDefinition = faQuestion;
+  @Input() variant: ButtonVariant = 'primary';
+  @Input() text = '';
+  @Input() type: 'button' | 'submit' | 'reset' = 'button';
+  @Input() showFaIconLeft = false;
+  @Input() showFaIconRight = false;
+  @Input() showSvgIconLeft = false;
+  @Input() showSvgIconRight = false;
+  @Input() showIconLeft = false;
+  @Input() showIconRight = false;
+  @Input() svgIconLeft?: string;
+  @Input() svgIconRight?: string;
   @Input() size: ButtonSize = 'medium';
-  @Input() isDisabled: boolean = false;
-  @Input() isLoading: boolean = false;
+  @Input() isDisabled = false;
+  @Input() isLoading = false;
   @Output() onClick = new EventEmitter<Event>();
   @Output() clicked = new EventEmitter<void>();
- 
-  public get classes(): string {
-    const mode = `button--${this.variant}`;
-    return `button button--${this.size} ${mode}`;
+
+  // Explicitly declare faSpinner as a readonly property
+  readonly faSpinner: IconDefinition = faSpinner;
+
+  constructor(private sanitizer: DomSanitizer) {}
+
+  get classes(): string {
+    return `button button--${this.size} button--${this.variant}`;
   }
 
   handleClick(event: Event) {
-    if (!this.isLoading) { // Prevent click event if loading
+    if (!this.isLoading && !this.isDisabled) {
       this.onClick.emit(event);
       this.clicked.emit();
     }
   }
 
+  getIcon(icon: IconDefinition | undefined): IconDefinition {
+    return icon || faQuestion;
+  }
 
-  getIcon(icon: IconDefinition | string): IconDefinition {
-    if (typeof icon === 'string') {
-      const foundIcon = faIconsList.find(i => i.label === icon);
-      return foundIcon ? foundIcon.value : faQuestion; // Return a default icon if not found
-    }
-    return icon || faQuestion; // Return the icon if it's already an IconDefinition, or a default if it's null/undefined
+  sanitizeSvg(url?: string): SafeResourceUrl | string {
+    return url ? this.sanitizer.bypassSecurityTrustResourceUrl(url) : '';
   }
 }

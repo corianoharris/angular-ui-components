@@ -1,384 +1,138 @@
-// Define Sass variables for colors
 $neutrals-white: #ffffff;
 $neutrals-gray-200: #e0e0e0;
 
-// Mixin for tooltips
 @mixin tooltip-base {
-    display: block;
-    padding: 16px 24px;
-    position: relative;
-    background-color: $neutrals-white;
-    border: 1px solid $neutrals-gray-200;
-    border-radius: 10px;
-    min-width: 100px;
-    min-height: 100px;
-    max-width: max-content;
-    max-height: max-content;
-    font-family: "Roboto";
-    letter-spacing: 1px;
-    gap: 8px;
+  display: block;
+  padding: 16px 24px;
+  position: relative;
+  background-color: $neutrals-white;
+  border: 1px solid $neutrals-gray-200;
+  border-radius: 10px;
+  min-width: 100px;
+  min-height: 100px;
+  max-width: max-content;
+  max-height: max-content;
+  font-family: "Roboto";
+  letter-spacing: 1px;
+  gap: 8px;
 }
 
-// Mixin for tooltip arrows
-// @mixin tooltip-arrow($position, $offset, $color) {
-//     @if $position == top {
-//       content: "";
-//       position: absolute;
-//       top: $offset;
-//       left: 100%; // Adjust this if needed
-//       width: 0;
-//       height: 0;
-//       border-top: 10px solid transparent;
-//       border-bottom: 10px solid transparent;
-//       border-left: 10px solid $color;
-//       transform: translateX(-100%); // Adjust if needed
-//     } @else if $position == bottom {
-//       content: "";
-//       position: absolute;
-//       bottom: $offset;
-//       left: 100%; // Adjust this if needed
-//       width: 0;
-//       height: 0;
-//       border-top: 10px solid $color;
-//       border-bottom: 10px solid transparent;
-//       border-left: 10px solid transparent;
-//       transform: translateX(-100%); // Adjust if needed
-//     } @else if $position == center {
-//       content: "";
-//       position: absolute;
-//       top: 50%;
-//       left: 100%; // Adjust this if needed
-//       transform: translateY(-50%) translateX(-100%); // Adjust if needed
-//       width: 0;
-//       height: 0;
-//       border-top: 10px solid transparent;
-//       border-bottom: 10px solid transparent;
-//       border-left: 10px solid $color;
-//     }
-//   }
-  
+@mixin tooltip-arrow($direction, $position, $offset: 10px, $color: $neutrals-gray-200, $size: 10px, $offset-adjust: 2px) {
+  content: "";
+  position: absolute;
+  @if $direction == top {
+    top: -$offset;
+    left: $position;
+    transform: translateX(-50%);
+    border-bottom: $size solid $color;
+    border-right: $size solid transparent;
+    border-left: $size solid transparent;
+  } @else if $direction == bottom {
+    bottom: -$offset;
+    left: $position;
+    transform: translateX(-50%);
+    border-top: $size solid $color;
+    border-right: $size solid transparent;
+    border-left: $size solid transparent;
+  } @else if $direction == left {
+    left: -$offset;
+    top: $position;
+    transform: if($position == 50%, translateY(-50%), null);
+    border-right: $size solid $color;
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+  } @else if $direction == right {
+    right: -$offset;
+    top: $position;
+    transform: if($position == 50%, translateY(-50%), null);
+    border-left: $size solid $color;
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+  }
+  width: 0;
+  height: 0;
+}
 
-
-// Base tooltip styling
 .tooltip {
-    @include tooltip-base;
+  @include tooltip-base;
 
-    &__title {
-        line-height: 18.8px;
-        font-weight: 600;
-    }
+  &__title {
+    line-height: 18.8px;
+    font-weight: 600;
+  }
 
-    &__content {
-        font-size: 14px;
-        font-weight: 300;
-        line-height: 140%;
-        margin: 28px 0;
-    }
+  &__content {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 140%;
+    margin: 28px 0;
+  }
 
-    &--box-shadow {
-        filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.16));
-    }
+  &--box-shadow {
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.16));
+  }
 
-    // Arrow positions
-    // &__position--left-top::before {
-    //     @include tooltip-arrow(top, 10px, $neutrals-gray-200);
-    // }
+  // Top arrow positions
+  &__position--top-center {
+    &::before { @include tooltip-arrow(top, 50%, 10px, $neutrals-gray-200, 10px); }
+    &::after { @include tooltip-arrow(top, 50%, 8px, $neutrals-white, 8px); }
+  }
 
-    // &__position--left-top::before {
-    //     @include tooltip-arrow(top, 10px, $neutrals-gray-200);
-    //   }
-      
-    //   &__position--left-top::after {
-    //     @include tooltip-arrow(top, 12px, $neutrals-white);
-    //   }
-      
-    //   &__position--left-center::before {
-    //     @include tooltip-arrow(center, 50%, $neutrals-gray-200);
-    //   }
-      
-    //   &__position--left-center::after {
-    //     @include tooltip-arrow(center, 50%, $neutrals-white);
-    //   }
-      
-    //   &__position--left-bottom::before {
-    //     @include tooltip-arrow(bottom, 10px, $neutrals-gray-200);
-    //   }
-      
-    //   &__position--left-bottom::after {
-    //     @include tooltip-arrow(bottom, 12px, $neutrals-white);
-    //   }
+  &__position--top-left {
+    &::before { @include tooltip-arrow(top, 10px, 10px, $neutrals-gray-200, 10px); }
+    &::after { @include tooltip-arrow(top, 12px, 8px, $neutrals-white, 8px); }
+  }
 
-    &__position--top-center::before {
-        content: "";
-        position: absolute;
-        top: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        border-bottom: 10px solid $neutrals-gray-200;
-        border-right: 10px solid transparent;
-        border-left: 10px solid transparent;
-    }
+  &__position--top-right {
+    &::before { @include tooltip-arrow(top, calc(100% - 10px), 10px, $neutrals-gray-200, 10px); }
+    &::after { @include tooltip-arrow(top, calc(100% - 12px), 8px, $neutrals-white, 8px); }
+  }
 
-    &__position--top-center::after {
-        content: "";
-        position: absolute;
-        top: -8px;
-        left: 50%;
-        transform: translateX(-50%);
-        border-bottom: 8px solid $neutrals-white;
-        border-right: 8px solid transparent;
-        border-left: 8px solid transparent;
-    }
+  // Left arrow positions
+  &__position--left-top {
+    &::before { @include tooltip-arrow(left, 10px, 10px, $neutrals-gray-200, 10px); }
+    &::after { @include tooltip-arrow(left, 12px, 8px, $neutrals-white, 8px); }
+  }
 
-    &__position--top-left::before {
-        content: "";
-        position: absolute;
-        top: -10px;
-        left: 10px;
-        border-bottom: 10px solid $neutrals-gray-200;
-        border-right: 10px solid transparent;
-        border-left: 10px solid transparent;
-    }
+  &__position--left-center {
+    &::before { @include tooltip-arrow(left, 50%, 10px, $neutrals-gray-200, 10px); }
+    &::after { @include tooltip-arrow(left, 50%, 8px, $neutrals-white, 8px); }
+  }
 
-    &__position--top-left::after {
-        content: "";
-        position: absolute;
-        top: -8px;
-        left: 12px;
-        border-bottom: 8px solid $neutrals-white;
-        border-right: 8px solid transparent;
-        border-left: 8px solid transparent;
-    }
+  &__position--left-bottom {
+    &::before { @include tooltip-arrow(left, calc(100% - 23px), 10px, $neutrals-gray-200, 10px); }
+    &::after { @include tooltip-arrow(left, calc(100% - 25px), 8px, $neutrals-white, 8px); }
+  }
 
-    &__position--top-right::before {
-        content: "";
-        position: absolute;
-        top: -10px;
-        right: 10px;
-        border-bottom: 10px solid $neutrals-gray-200;
-        border-right: 10px solid transparent;
-        border-left: 10px solid transparent;
-    }
+  // Right arrow positions
+  &__position--right-top {
+    &::before { @include tooltip-arrow(right, 10px, 10px, $neutrals-gray-200, 10px); }
+    &::after { @include tooltip-arrow(right, 12px, 8px, $neutrals-white, 8px); }
+  }
 
-    &__position--top-right::after {
-        content: "";
-        position: absolute;
-        top: -8px;
-        right: 12px;
-        border-bottom: 8px solid $neutrals-white;
-        border-right: 8px solid transparent;
-        border-left: 8px solid transparent;
-    }
+  &__position--right-center {
+    &::before { @include tooltip-arrow(right, 50%, 10px, $neutrals-gray-200, 10px); }
+    &::after { @include tooltip-arrow(right, 50%, 8px, $neutrals-white, 8px); }
+  }
 
-    &__position--left-top::before {
-        content: "";
-        position: absolute;
-        top: 10px;
-        left: -10px;
-        width: 0;
-        height: 0;
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        border-right: 10px solid $neutrals-gray-200;
-    }
-    
-    &__position--left-top::after {
-        content: "";
-        position: absolute;
-        top: 12px;
-        left: -8px;
-        width: 0;
-        height: 0;
-        border-top: 8px solid transparent;
-        border-bottom: 8px solid transparent;
-        border-right: 8px solid $neutrals-white;
-    }
-    
-    &__position--left-center::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: -10px;
-        width: 0;
-        height: 0;
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        border-right: 10px solid $neutrals-gray-200;
-    }
-    
-    &__position--left-center::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: -8px;
-        width: 0;
-        height: 0;
-        border-top: 8px solid transparent;
-        border-bottom: 8px solid transparent;
-        border-right: 8px solid $neutrals-white;
-    }
-    
-    &__position--left-bottom::before {
-        content: "";
-        position: absolute;
-        bottom: 10px;
-        left: -10px;
-        width: 0;
-        height: 0;
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        border-right: 10px solid $neutrals-gray-200;
-    }
-    
-    &__position--left-bottom::after {
-        content: "";
-        position: absolute;
-        bottom: 12px;
-        left: -8px;
-        width: 0;
-        height: 0;
-        border-top: 8px solid transparent;
-        border-bottom: 8px solid transparent;
-        border-right: 8px solid $neutrals-white;
-    }
+  &__position--right-bottom {
+    &::before { @include tooltip-arrow(right, calc(100% - 23px), 10px, $neutrals-gray-200, 10px); }
+    &::after { @include tooltip-arrow(right, calc(100% - 25px), 8px, $neutrals-white, 8px); }
+  }
 
-    &__position--right-top::before {
-        content: "";
-        position: absolute;
-        top: 10px;
-        right: -10px;
-        width: 0;
-        height: 0;
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        border-left: 10px solid $neutrals-gray-200;
-    }
-    
-    &__position--right-top::after {
-        content: "";
-        position: absolute;
-        top: 12px;
-        right: -8px;
-        width: 0;
-        height: 0;
-        border-top: 8px solid transparent;
-        border-bottom: 8px solid transparent;
-        border-left: 8px solid $neutrals-white;
-    }
-    
-    &__position--right-center::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: -10px;
-        width: 0;
-        height: 0;
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        border-left: 10px solid $neutrals-gray-200;
-    }
-    
-    &__position--right-center::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: -8px;
-        width: 0;
-        height: 0;
-        border-top: 8px solid transparent;
-        border-bottom: 8px solid transparent;
-        border-left: 8px solid $neutrals-white;
-    }
-    
-    &__position--right-bottom::before {
-        content: "";
-        position: absolute;
-        bottom: 10px;
-        right: -10px;
-        width: 0;
-        height: 0;
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        border-left: 10px solid $neutrals-gray-200;
-    }
-    
-    &__position--right-bottom::after {
-        content: "";
-        position: absolute;
-        bottom: 12px;
-        right: -8px;
-        width: 0;
-        height: 0;
-        border-top: 8px solid transparent;
-        border-bottom: 8px solid transparent;
-        border-left: 8px solid $neutrals-white;
-    }
+  // Bottom arrow positions
+  &__position--bottom-center {
+    &::before { @include tooltip-arrow(bottom, 50%, 10px, $neutrals-gray-200, 10px); }
+    &::after { @include tooltip-arrow(bottom, 50%, 8px, $neutrals-white, 8px); }
+  }
 
-    &__position--bottom-center::before {
-        content: "";
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        border-top: 10px solid $neutrals-gray-200;
-        border-right: 10px solid transparent;
-        border-left: 10px solid transparent;
-    }
+  &__position--bottom-left {
+    &::before { @include tooltip-arrow(bottom, 10px, 10px, $neutrals-gray-200, 10px); }
+    &::after { @include tooltip-arrow(bottom, 12px, 8px, $neutrals-white, 8px); }
+  }
 
-    &__position--bottom-center::after {
-        content: "";
-        position: absolute;
-        bottom: -8px;
-        left: 50%;
-        transform: translateX(-50%);
-        border-top: 8px solid $neutrals-white;
-        border-right: 8px solid transparent;
-        border-left: 8px solid transparent;
-    }
-
-    &__position--bottom-left::before {
-        content: "";
-        position: absolute;
-        bottom: -10px;
-        left: 10px;
-        border-top: 10px solid $neutrals-gray-200;
-        border-right: 10px solid transparent;
-        border-left: 10px solid transparent;
-    }
-
-    &__position--bottom-left::after {
-        content: "";
-        position: absolute;
-        bottom: -8px;
-        left: 12px;
-        border-top: 8px solid $neutrals-white;
-        border-right: 8px solid transparent;
-        border-left: 8px solid transparent;
-    }
-
-    &__position--bottom-right::before {
-        content: "";
-        position: absolute;
-        bottom: -10px;
-        left: 90%;
-        transform: translateX(-50%);
-        border-top: 10px solid $neutrals-gray-200;
-        border-right: 10px solid transparent;
-        border-left: 10px solid transparent;
-    }
-
-    &__position--bottom-right::after {
-        content: "";
-        position: absolute;
-        bottom: -8px;
-        left: 90%;
-        transform: translateX(-50%);
-        border-top: 8px solid $neutrals-white;
-        border-right: 8px solid transparent;
-        border-left: 8px solid transparent;
-    }
+  &__position--bottom-right {
+    &::before { @include tooltip-arrow(bottom, 90%, 10px, $neutrals-gray-200, 10px); }
+    &::after { @include tooltip-arrow(bottom, 90%, 8px, $neutrals-white, 8px); }
+  }
 }

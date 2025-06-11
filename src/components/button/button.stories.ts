@@ -1,123 +1,58 @@
 import { Meta, StoryObj } from '@storybook/angular';
-import { ButtonComponent } from './button.component';
+import { ButtonComponent} from './button.component';
+import { ButtonType, ButtonVariant, ButtonSize } from './button.types';
 import { faIconsList } from '../icon/icons';
-import { IconDefinition, IconName, IconPrefix } from '@fortawesome/fontawesome-svg-core';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-
 
 const meta: Meta<ButtonComponent> = {
   title: 'Components/Button',
   component: ButtonComponent,
   tags: ['autodocs'],
   argTypes: {
-    text: { 
-      control: 'text' 
-    },
+    text: { control: 'text' },
     type: { 
-      control: { 
-        type: 'select', 
-        options: ['button', 'submit', 'reset'] 
-      } 
+      control: { type: 'select', options: ['button', 'submit', 'reset'] as ButtonType[] },
+      type: { name: 'enum', value: ['button', 'submit', 'reset'] }
     },
     variant: { 
-      control: { 
-        type: 'select', 
-        options: ['primary' , 'secondary' , 'tertiary' , 'destructive' , 'loading'] 
-      } 
+      control: { type: 'select', options: ['primary', 'secondary', 'tertiary', 'destructive'] as ButtonVariant[] },
+      type: { name: 'enum', value: ['primary', 'secondary', 'tertiary', 'destructive'] }
     },
-    isDisabled: { 
-      control: 'boolean' 
+    size: { 
+      control: { type: 'select', options: ['small', 'medium', 'large'] as ButtonSize[] },
+      type: { name: 'enum', value: ['small', 'medium', 'large'] }
     },
-    isLoading: {
-      control: 'boolean',
-    },
-    showIconLeft: { 
-      control: 'boolean' 
-    },
-    showIconRight: { 
-      control: 'boolean' 
-    },
-    showFaIconLeft: { 
-      control: 'boolean' 
-    },
-    showFaIconRight: { 
-      control: 'boolean' 
-    },
-    showSvgIconLeft: { 
-      control: 'boolean' 
-    },
-    showSvgIconRight: { 
-      control: 'boolean' 
-    },
-    faIconLeft: { 
-    // if: { arg: 'showIconLeft && showFaIconLeft && !showSvgIconLeft' },
-      options: faIconsList.map(option => option.label),
+    isDisabled: { control: 'boolean' },
+    isLoading: { control: 'boolean' },
+    showIconLeft: { control: 'boolean' },
+    showIconRight: { control: 'boolean' },
+    showFaIconLeft: { control: 'boolean', if: { arg: 'showIconLeft', eq: true } },
+    showFaIconRight: { control: 'boolean', if: { arg: 'showIconRight', eq: true } },
+    showSvgIconLeft: { control: 'boolean', if: { arg: 'showIconLeft', eq: true } },
+    showSvgIconRight: { control: 'boolean', if: { arg: 'showIconRight', eq: true } },
+    faIconLeft: {
       control: { type: 'select' },
+      options: faIconsList.map(option => option.label),
       mapping: faIconsList.reduce<{ [key: string]: IconDefinition }>((acc, cur) => {
         acc[cur.label] = cur.value;
         return acc;
       }, {}),
-      onchange: (faIconName: string | IconDefinition) => {
-        let faIcon: IconDefinition;
-        let faPrefix: IconPrefix;
-        let faIdentifier: IconName;
-        if (typeof faIconName === 'string') {
-          const option = faIconsList.find(option => option.label === faIconName);
-          if (!option) throw new Error(`Icon "${faIconName}" not found.`);
-          faIcon = option.value;
-          faPrefix = option.value.prefix;
-          faIdentifier = option.value.iconName;
-        } else {
-          faIcon = faIconName;
-        }
-        return {
-          // faPrefix: faIcon.prefix,
-          // faIdentifier: faIcon.iconName,
-          icon: faIcon.icon,
-        };
-      },
+      if: { arg: 'showFaIconLeft', eq: true },
     },
-    faIconRight: { 
-      // if: { arg: 'showIconRight && showFaIconRight && !showSvgIconRight' },
-      options: faIconsList.map(option => option.label),
+    faIconRight: {
       control: { type: 'select' },
+      options: faIconsList.map(option => option.label),
       mapping: faIconsList.reduce<{ [key: string]: IconDefinition }>((acc, cur) => {
         acc[cur.label] = cur.value;
         return acc;
       }, {}),
-      onchange: (faIconName: string | IconDefinition) => {
-        let faIcon: IconDefinition;
-        let faPrefix: IconPrefix;
-        let faIdentifier: IconName;
-        if (typeof faIconName === 'string') {
-          const option = faIconsList.find(option => option.label === faIconName);
-          if (!option) throw new Error(`Icon "${faIconName}" not found.`);
-          faIcon = option.value;
-          faPrefix = option.value.prefix;
-          faIdentifier = option.value.iconName;
-        } else {
-          faIcon = faIconName;
-        }
-        return {
-          // faPrefix: faIcon.prefix,
-          // faIdentifier: faIcon.iconName,
-          icon: faIcon.icon,
-        };
-      },
+      if: { arg: 'showFaIconRight', eq: true },
     },
-    svgIconLeft: { 
-      if: { arg: 'showSvgIconLeft && !showFaIconLeft' },
-      control: { type: 'text' }
-    },
-    svgIconRight: { 
-      if: { arg: 'showSvgIconRight && !showFaIconRight' },
-      control: { type: 'text' }
-    },
-    clicked: { 
-      action: 'clicked' 
-    }
-  }
-  ,
+    svgIconLeft: { control: 'text', if: { arg: 'showSvgIconLeft', eq: true } },
+    svgIconRight: { control: 'text', if: { arg: 'showSvgIconRight', eq: true } },
+    clicked: { action: 'clicked' },
+  },
 };
 
 export default meta;
@@ -127,7 +62,10 @@ export const Default: Story = {
   args: {
     text: 'Click me',
     type: 'button',
+    variant: 'primary',
+    size: 'medium',
     isDisabled: false,
+    isLoading: false,
     showIconLeft: false,
     showIconRight: false,
     showFaIconLeft: false,
@@ -153,47 +91,69 @@ export const Submit: Story = {
     ...Default.args,
     text: 'Submit',
     type: 'submit',
+    variant: 'primary',
+  },
+};
+
+export const Reset: Story = {
+  args: {
+    ...Default.args,
+    text: 'Reset',
+    type: 'reset',
+    variant: 'secondary',
   },
 };
 
 export const Primary: Story = {
   args: {
+    ...Default.args,
     text: 'Primary Button',
+    type: 'button',
     variant: 'primary',
     showIconLeft: true,
     showIconRight: true,
     showFaIconLeft: true,
+    showFaIconRight: true,
     showSvgIconLeft: false,
+    showSvgIconRight: false,
     faIconLeft: faCoffee,
     faIconRight: faCoffee,
-    isDisabled: false,
   },
 };
 
 export const Secondary: Story = {
   args: {
+    ...Default.args,
     text: 'Secondary Button',
+    type: 'button',
     variant: 'secondary',
   },
 };
 
 export const Tertiary: Story = {
   args: {
+    ...Default.args,
     text: 'Tertiary Button',
+    type: 'button',
     variant: 'tertiary',
   },
 };
 
 export const Destructive: Story = {
   args: {
+    ...Default.args,
     text: 'Destructive Button',
+    type: 'button',
     variant: 'destructive',
   },
 };
 
 export const Loading: Story = {
   args: {
+    ...Default.args,
     text: 'Loading Button',
-    variant: 'loading',
+    type: 'button',
+    variant: 'primary',
+    isLoading: true,
   },
 };
